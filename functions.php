@@ -1,10 +1,10 @@
 <?php
 /**
- * d\'signfly functions and definitions
+ * dsignfly functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package d\'signfly
+ * @package dsignfly
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -178,3 +178,54 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Register Portfolio post type
+ *
+ * @return void
+ */
+function dsignfly_register_custom_post_type() {
+	$labels = array(
+		'name'               => __( 'Portfolios', 'dsignfly' ),
+		'singular_name'      => __( 'Portfolio', 'dsignfly' ),
+		'add_new'            => __( 'Add Portfolio', 'dsignfly' ),
+		'add_new_item'       => __( 'Add New Portfolio', 'dsignfly' ),
+		'edit_item'          => __( 'Edit Portfolio', 'dsignfly' ),
+		'new_item'           => __( 'New Portfolio', 'dsignfly' ),
+		'view_item'          => __( 'View Portfolio', 'dsignfly' ),
+		'view_items'         => __( 'View Portfolio', 'dsignfly' ),
+		'search_items'       => __( 'Search Portfolio', 'dsignfly' ),
+		'not_found'          => __( 'No Portfolio found', 'dsignfly' ),
+		'not_found_in_trash' => __( 'No Portfolio found in trash', 'dsignfly' ),
+		'all_items'          => __( 'All Portfolio', 'dsignfly' ),
+		'archives'           => __( 'Portfolio Archives', 'dsignfly' ),
+		'attributes'         => __( 'Portfolio Attributes', 'dsignfly' ),
+	);
+
+	$args = array(
+		'labels'              => $labels,
+		'public'              => true,
+		'description'         => __( 'This is a custom post type for the theme Dsignfly', 'dsignfly' ),
+		'hierarchical'        => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => false,
+		'capability_type'     => 'post',
+		'has_archive'         => __( 'dsignfly-portfolio', 'dsignfly' ),
+		'rewrite'             => array( 'slug' => 'dsignfly-portfolio' ),
+		'query_var'           => 'dsignfly_portfolio',
+	);
+
+	register_post_type( 'dsignfly_portfolio', $args );
+}
+add_action( 'init', 'dsignfly_register_custom_post_type' );
+
+/**
+ * Flush rewrite rules for theme's custom post type
+ */
+add_action( 'after_switch_theme', 'dsignfly_flush_rewrite_rules' );
+function dsignfly_flush_rewrite_rules() {
+	dsignfly_register_custom_post_type();
+	flush_rewrite_rules();
+}
