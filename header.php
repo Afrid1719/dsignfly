@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package d\'signfly
+ * @package dsignfly
  */
 
 ?>
@@ -25,24 +25,19 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'dsignfly' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header" style="background-image: url(<?php esc_attr_e( get_theme_file_uri( 'assets/images/repeatable-bg.png' ) ); ?>);">
 		<div class="site-branding">
 			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
+			if ( has_custom_logo() ) :
+				the_custom_logo();
 			else :
+				$image_url = get_theme_file_uri( 'assets/images/home/logo.png' );
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<img src="<?php esc_attr_e( $image_url ); ?>" class="dsignfly-header-img" width="400" height="300"/>
 				<?php
 			endif;
-			$dsignfly_description = get_bloginfo( 'description', 'display' );
-			if ( $dsignfly_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $dsignfly_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+			?>
+			 
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
@@ -50,10 +45,17 @@
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
+					'menu'            => 'menu-1',
+					'menu_class'      => 'dsignfly-menu__list',
+					'container_class' => 'dsignfly-menu',
+					'theme_location'  => 'menu-1',
+					'menu_id'         => 'primary-menu',
 				)
 			);
 			?>
+			<form class="dsignfly-search">
+				<input type="text" class="search-input" />
+				<button class="search-submit-btn"><img src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/search-icon.png' ) ); ?>" class="search-submit-img" /></button>                    
+			</form>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
