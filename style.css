@@ -974,7 +974,8 @@ textarea {
   margin-bottom: 1.5em;
 }
 
-/* ==============Dsignfly css=============== */
+/* ========== Dsignfly styles ============= */
+
 .site-header {
   display: flex;
   flex-flow: row wrap;
@@ -995,7 +996,7 @@ textarea {
   vertical-align: middle;
 }
 
-.dsignfly-header-img {
+.site-branding img {
   display: block;
   width: 30%;
   height: auto;

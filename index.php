@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package d\'signfly
+ * @package dsignfly
  */
 
 get_header();
