@@ -79,6 +79,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
+  font-family: var(--dsignfly-font-family);
 }
 
 /* Sections
@@ -976,13 +977,15 @@ textarea {
 
 /* ========== Dsignfly styles ============= */
 
+/* --------- Header ----------- */
 .site-header {
   display: flex;
   flex-flow: row wrap;
-  height: 105px;
+  min-height: 105px;
   padding: 1rem 0;
   background-repeat: repeat;
-  box-shadow: 0 5px 5px #ddd;
+  box-shadow: 0 5px 5px #950904;
+  z-index: 100;
 }
 
 .site-branding {
@@ -1011,7 +1014,6 @@ textarea {
 .dsignfly-menu__list > .menu-item a {
   padding: 4px 10px;
   border-radius: 3px;
-  font-family: var(--dsignfly-font-family);
   font-weight: var(--dsignfly-font-weight-bold);
   font-size: 14px;
   color: #222;
@@ -1048,4 +1050,84 @@ textarea {
   height: 20px;
   object-fit: cover;
   object-position: 0 -4%;
+}
+
+
+/* ------------- Homepage --------------- */
+.dsignfly-banner{ 
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 544px;
+  position: relative;
+  padding: 20px 32px;
+  margin-bottom: 3px;
+}
+
+.dsignfly-banner-bg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.dsignfly-banner__left-arrow{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 20%;
+}
+
+.dsignfly-banner__left-arrow-img{
+  width: 150px; 
+  height: 70px;
+  object-fit: cover;
+  object-position: 70px 20px;
+}
+
+.dsignfly-banner__text{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: flex-end;
+}
+
+.dsignfly-banner__header-text{
+  font-weight: var(--dsignfly-font-weight-bold);
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 0px 2px 2px #950904;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.dsignfly-banner__body-text {
+  font-weight: var(--dsignfly-font-weight-semi-bold);
+  font-size: 1rem;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.dsignfly-banner__right-arrow{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+}
+
+.dsignfly-banner__right-arrow-img{
+  width: 150px; 
+  height: 70px;
+  object-fit: cover;
+  object-position: -70px 20px;
 }
