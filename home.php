@@ -8,8 +8,8 @@
 get_header();
 ?>
 	<?php $banner_bg = get_theme_file_uri('assets/images/home/slider-image.png'); ?> 
-    <div class="dsignfly-banner">
-        <img class="dsignfly-banner-bg" src="<?php esc_attr_e($banner_bg); ?>" aria-hidden="true" />
+    <div class="dsignfly-banner" style="background-image: url(<?php esc_attr_e($banner_bg); ?>);">
+        <!-- <img class="dsignfly-banner-bg"  aria-hidden="true" /> -->
 		<a class="dsignfly-banner__left-arrow" href="#">
 			<img 
 				src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/slider-arrows.png' ) ); ?>" 

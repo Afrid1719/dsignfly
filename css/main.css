@@ -1,0 +1,277 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: Open sans;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  -webkit-clip-path: none;
+          clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+.site-header {
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 105px;
+  padding: 1rem 0;
+  background-repeat: repeat;
+  box-shadow: 0 5px 5px #950904;
+  z-index: 10000;
+}
+
+.site-branding {
+  width: 40%;
+}
+.site-branding img {
+  display: block;
+  width: 30%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.main-navigation {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  vertical-align: middle;
+}
+
+.dsignfly-menu,
+.dsignfly-search {
+  display: inline-block;
+}
+
+.dsignfly-menu__list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.dsignfly-menu__list > .menu-item {
+  display: inline-block;
+}
+.dsignfly-menu__list > .menu-item a {
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #222;
+  transition: 500ms ease-in-out;
+  text-decoration: none;
+}
+.dsignfly-menu__list > .menu-item a:hover {
+  background-color: #ef4643;
+  color: #fff;
+}
+
+.dsignfly-search {
+  padding: 0 20px;
+  margin-top: -5px;
+}
+.dsignfly-search .search-input {
+  width: 150px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #62585f;
+}
+
+.search-submit-btn {
+  padding: 0;
+  border: none;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.search-submit-img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  object-position: 0 -4%;
+}
+
+.site-footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 1170px;
+  margin: 0 auto;
+  border-top: 1px solid #62585f;
+  padding: 32px 0 20px;
+}
+
+.site-footer__column-one {
+  width: 50%;
+}
+
+.site-footer__welcome-header,
+.site-footer__contact-header {
+  font-weight: 400;
+  font-size: 25px;
+  color: #62585f;
+  text-shadow: 0 2px 2px #fff;
+}
+
+.site-footer__welcome-body,
+.site-footer__contact-body {
+  font-weight: 400;
+  font-size: 14px;
+  color: #62585f;
+  line-height: 21px;
+  padding-right: 12px;
+  margin-bottom: 12px;
+}
+
+.site-footer__link {
+  text-decoration: none;
+  color: #ef4634;
+  font-weight: 400;
+  font-size: 14px;
+}
+.site-footer__link:hover {
+  text-decoration: underline;
+}
+
+.site-footer__column-two {
+  width: 50%;
+}
+
+.site-footer__contact-info {
+  white-space: pre-line;
+}
+
+.site-footer__social-link {
+  display: inline-block;
+  transition: 0.4s ease-in;
+}
+.site-footer__social-link img {
+  width: 40px;
+  height: 40px;
+}
+.site-footer__social-link:hover {
+  opacity: 0.7;
+}
+
+.site-footer__copyright {
+  padding-top: 20px;
+  margin-top: 28px;
+  border-top: 1px solid #62585f;
+  width: 100%;
+  text-align: center;
+}
+
+.designer-name {
+  color: #ef4634;
+  text-decoration: none;
+}
+.designer-name:hover {
+  text-decoration: underline;
+}
+
+.dsignfly-banner {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 544px;
+  padding: 40px 24px;
+  margin-bottom: 3px;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-origin: padding-box;
+}
+
+.dsignfly-banner__left-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 20%;
+}
+
+.dsignfly-banner__left-arrow-img {
+  width: 150px;
+  height: 70px;
+  object-fit: cover;
+  object-position: 70px 20px;
+}
+
+.dsignfly-banner__text {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: flex-end;
+}
+
+.dsignfly-banner__header-text {
+  font-weight: 700;
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 0px 2px 2px #950904;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.dsignfly-banner__body-text {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.dsignfly-banner__right-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+}
+
+.dsignfly-banner__right-arrow-img {
+  width: 150px;
+  height: 70px;
+  object-fit: cover;
+  object-position: -70px 20px;
+}

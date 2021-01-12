@@ -1,0 +1,128 @@
+ @import 'variables';
+ /* Text meant only for screen readers. */
+ .screen-reader-text {
+     border: 0;
+     clip: rect(1px, 1px, 1px, 1px);
+     clip-path: inset(50%);
+     height: 1px;
+     margin: -1px;
+     overflow: hidden;
+     padding: 0;
+     position: absolute !important;
+     width: 1px;
+     word-wrap: normal !important;
+
+
+     &:focus {
+         background-color: #f1f1f1;
+         border-radius: 3px;
+         box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+         clip: auto !important;
+         clip-path: none;
+         color: #21759b;
+         display: block;
+         font-size: 0.875rem;
+         font-weight: 700;
+         height: auto;
+         left: 5px;
+         line-height: normal;
+         padding: 15px 23px 14px;
+         text-decoration: none;
+         top: 5px;
+         width: auto;
+         z-index: 100000;
+     }
+ }
+
+ /* Do not show the outline on the skip link target. */
+ #primary[tabindex="-1"]:focus {
+     outline: 0;
+ }
+
+ .site-header {
+     display: flex;
+     flex-flow: row wrap;
+     min-height: 105px;
+     padding: 1rem 0;
+     background-repeat: repeat;
+     box-shadow: 0 5px 5px #950904;
+     z-index: 10000;
+ }
+
+ .site-branding {
+     width: 40%;
+
+     img {
+         display: block;
+         width: 30%;
+         height: auto;
+         margin: 0 auto;
+     }
+ }
+
+ .main-navigation {
+     display: flex;
+     align-items: center;
+     width: 60%;
+     vertical-align: middle;
+ }
+
+ .dsignfly-menu,
+ .dsignfly-search {
+     display: inline-block;
+ }
+
+
+ .dsignfly-menu__list{
+    list-style-type: none;
+    padding-left: 0;
+
+    > .menu-item {
+        display: inline-block;
+        
+        a {
+        padding: 6px 10px;
+        border-radius: 3px;
+        font-weight: $dsignfly-font-weight-bold;
+        font-size: 14px;
+        color: #222;
+        transition: 500ms ease-in-out;
+        text-decoration: none;
+   
+        &:hover {
+            background-color: #ef4643;
+            color: #fff;
+        }
+    }
+    }
+ }
+ 
+
+
+
+ .dsignfly-search {
+     padding: 0 20px;
+     margin-top: -5px;
+
+     .search-input {
+        width: 150px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid #62585f;
+    }
+ }
+
+ .search-submit-btn {
+     padding: 0;
+     border: none;
+     margin-top: 4px;
+     cursor: pointer;
+ }
+
+ .search-submit-img {
+     width: 20px;
+     height: 20px;
+     object-fit: cover;
+     object-position: 0 -4%;
+ }
