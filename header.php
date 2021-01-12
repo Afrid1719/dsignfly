@@ -33,7 +33,7 @@
 			else :
 				$image_url = get_theme_file_uri( 'assets/images/home/logo.png' );
 				?>
-				<img src="<?php esc_attr_e( $image_url ); ?>" class="dsignfly-header-img" width="400" height="300"/>
+				<img src="<?php esc_attr_e( $image_url ); ?>" alt="<?php esc_attr_e( bloginfo('title') ); ?>" class="dsignfly-header-img" width="400" height="300"/>
 				<?php
 			endif;
 			?>
