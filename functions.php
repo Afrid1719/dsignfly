@@ -179,26 +179,26 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 /**
- * Register Portfolio post type
+ * Register Dsingfly CPT post type
  *
  * @return void
  */
 function dsignfly_register_custom_post_type() {
 	$labels = array(
-		'name'               => __( 'Portfolios', 'dsignfly' ),
-		'singular_name'      => __( 'Portfolio', 'dsignfly' ),
-		'add_new'            => __( 'Add Portfolio', 'dsignfly' ),
-		'add_new_item'       => __( 'Add New Portfolio', 'dsignfly' ),
-		'edit_item'          => __( 'Edit Portfolio', 'dsignfly' ),
-		'new_item'           => __( 'New Portfolio', 'dsignfly' ),
-		'view_item'          => __( 'View Portfolio', 'dsignfly' ),
-		'view_items'         => __( 'View Portfolio', 'dsignfly' ),
-		'search_items'       => __( 'Search Portfolio', 'dsignfly' ),
-		'not_found'          => __( 'No Portfolio found', 'dsignfly' ),
-		'not_found_in_trash' => __( 'No Portfolio found in trash', 'dsignfly' ),
-		'all_items'          => __( 'All Portfolio', 'dsignfly' ),
-		'archives'           => __( 'Portfolio Archives', 'dsignfly' ),
-		'attributes'         => __( 'Portfolio Attributes', 'dsignfly' ),
+		'name'               => __( 'Dsingfly CPTs', 'dsignfly' ),
+		'singular_name'      => __( 'Dsingfly CPT', 'dsignfly' ),
+		'add_new'            => __( 'Add Dsingfly CPT', 'dsignfly' ),
+		'add_new_item'       => __( 'Add New Dsingfly CPT', 'dsignfly' ),
+		'edit_item'          => __( 'Edit Dsingfly CPT', 'dsignfly' ),
+		'new_item'           => __( 'New Dsingfly CPT', 'dsignfly' ),
+		'view_item'          => __( 'View Dsingfly CPT', 'dsignfly' ),
+		'view_items'         => __( 'View Dsingfly CPT', 'dsignfly' ),
+		'search_items'       => __( 'Search Dsingfly CPT', 'dsignfly' ),
+		'not_found'          => __( 'No Dsingfly CPT found', 'dsignfly' ),
+		'not_found_in_trash' => __( 'No Dsingfly CPT found in trash', 'dsignfly' ),
+		'all_items'          => __( 'All Dsingfly CPT', 'dsignfly' ),
+		'archives'           => __( 'Dsingfly CPT Archives', 'dsignfly' ),
+		'attributes'         => __( 'Dsingfly CPT Attributes', 'dsignfly' ),
 	);
 
 	$args = array(
@@ -213,12 +213,12 @@ function dsignfly_register_custom_post_type() {
 		'show_in_nav_menus'   => false,
 		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revision' ),
 		'capability_type'     => 'post',
-		'has_archive'         => __( 'dsignfly-portfolio', 'dsignfly' ),
-		'rewrite'             => array( 'slug' => 'dsignfly-portfolio' ),
-		'query_var'           => 'dsignfly_portfolio',
+		'has_archive'         => __( 'dsignfly-cpt', 'dsignfly' ),
+		'rewrite'             => array( 'slug' => 'dsignfly-cpt' ),
+		'query_var'           => 'dsignfly_cpt',
 	);
 
-	register_post_type( 'dsignfly_portfolio', $args );
+	register_post_type( 'dsignfly_cpt', $args );
 }
 add_action( 'init', 'dsignfly_register_custom_post_type' );
 
