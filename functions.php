@@ -211,6 +211,7 @@ function dsignfly_register_custom_post_type() {
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => false,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', 'revision' ),
 		'capability_type'     => 'post',
 		'has_archive'         => __( 'dsignfly-portfolio', 'dsignfly' ),
 		'rewrite'             => array( 'slug' => 'dsignfly-portfolio' ),

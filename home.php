@@ -7,30 +7,45 @@
 
 get_header();
 ?>
-	<?php $banner_bg = get_theme_file_uri('assets/images/home/slider-image.png'); ?> 
-    <div class="dsignfly-banner" style="background-image: url(<?php esc_attr_e($banner_bg); ?>);">
-        <!-- <img class="dsignfly-banner-bg"  aria-hidden="true" /> -->
-		<a class="dsignfly-banner__left-arrow" href="#">
-			<img 
-				src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/slider-arrows.png' ) ); ?>" 
-				alt="Slide left" 
-				class="dsignfly-banner__left-arrow-img"
-			/>
-		</a>
-		<div class="dsignfly-banner__text">
-			<h1 class="dsignfly-banner__header-text"><?php esc_html_e( bloginfo( 'description' ) ); ?></h1>
-			<p class="dsignfly-banner__body-text">
-			<!-- What should be here needs clarification -->
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis est neque veniam praesentium vitae suscipit nesciunt totam repellat, soluta assumenda tempore. Impedit quibusdam earum praesentium repudiandae, omnis accusantium fuga alias.
-			</p>
-		</div>
-		<a class="dsignfly-banner__right-arrow" href="#">
-			<img 
-				src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/slider-arrows.png' ) ); ?>" 
-				alt="Slide right" 
-				class="dsignfly-banner__right-arrow-img" 
-			/>
-		</a>
-    </div>
+	
+
+	<main class="dsignfly-main">
+	<?php
+		$loop = new WP_Query(
+			array(
+				'post_type' => 'dsignfly_portfolio',
+				'posts_per_page' => '6',
+			)
+		);
+	?>
+		<header class="dsignfly-gallery-header">
+			<h2><?php esc_html_e('D\'SIGNFLY THE SOUL'); ?></h2>
+			<button 
+				type="button" 
+				class="dsignfly-view-all-btn"
+				<?php echo (! $loop->have_posts()) ? 'disbaled aria-hidden="true"' : '' ?>
+			>
+				view all
+			</button>
+		</header>
+
+		<?php
+		if ( $loop->have_posts() ) : ?>
+			<div class="dsignfly-gallery">
+			<?php	
+			while ( $loop->have_posts() ) :
+				$loop->the_post();
+				echo '<a href="' . get_the_permalink(get_the_ID()) . '">'; 
+				echo '<img src="' . get_the_post_thumbnail_url() . '" alt="' . $post->post_title . '" width="300" height="210" />';
+				echo '</a>';
+			endwhile; ?>
+			</div>
+		<?php 
+		else : ?>
+			<div class="no-posts-found">It looks like you don't have any post.</div>
+		<?php
+		endif;
+		?>
+	</main>
 <?php
 get_footer();
