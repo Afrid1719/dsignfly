@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'gallery';
 
 .dsignfly-main {
     display: block;
@@ -48,29 +49,7 @@
 }
 
 .dsignfly-gallery {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    justify-self: center;
-    grid-gap: 15px;
-    margin : {
-        top: 30px;
-        bottom: 30px;
-    }
-
-    a {
-        display: block;
-
-        img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 350ms ease-in;
-        }
-
-        &:hover img{
-            transform: scale(1.125);
-        }
-    }
+    @extend .gallery;
 }
 
 .no-posts-found {

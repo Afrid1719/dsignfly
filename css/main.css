@@ -327,6 +327,48 @@ body {
   text-decoration: underline;
 }
 
+.gallery {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-self: center;
+  grid-gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.gallery a {
+  display: block;
+}
+.gallery a img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 350ms ease-in;
+}
+.gallery a:hover img {
+  transform: scale(1.125);
+}
+
+.gallery, .dsignfly-gallery {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-self: center;
+  grid-gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.gallery a, .dsignfly-gallery a {
+  display: block;
+}
+.gallery a img, .dsignfly-gallery a img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 350ms ease-in;
+}
+.gallery a:hover img, .dsignfly-gallery a:hover img {
+  transform: scale(1.125);
+}
+
 .dsignfly-main {
   display: block;
   width: 1170px;
@@ -364,7 +406,13 @@ body {
   cursor: pointer;
 }
 
-.dsignfly-gallery {
+.no-posts-found {
+  font-size: 24px;
+  color: #222222;
+  text-align: center;
+}
+
+.gallery, .dsignfly-portfolio-gallery {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -373,20 +421,57 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.dsignfly-gallery a {
+.gallery a, .dsignfly-portfolio-gallery a {
   display: block;
 }
-.dsignfly-gallery a img {
+.gallery a img, .dsignfly-portfolio-gallery a img {
   width: 100%;
   border-radius: 10px;
   transition: transform 350ms ease-in;
 }
-.dsignfly-gallery a:hover img {
+.gallery a:hover img, .dsignfly-portfolio-gallery a:hover img {
   transform: scale(1.125);
 }
 
-.no-posts-found {
-  font-size: 24px;
-  color: #222222;
-  text-align: center;
+.dsignfly-portfolio-gallery a {
+  position: relative;
+  z-index: 99;
+}
+.dsignfly-portfolio-gallery a .img-overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  width: 380px;
+  height: 210px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  transition: 1s ease;
+}
+.dsignfly-portfolio-gallery a img[tabIndex="-1"] {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: auto;
+}
+.dsignfly-portfolio-gallery a button {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  transform: translate(-50%, -62%);
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  color: #fff;
+  font-weight: 500;
+}
+.dsignfly-portfolio-gallery a:hover img:not([tabIndex="-1"]) {
+  transform: unset;
+}
+.dsignfly-portfolio-gallery a:hover .img-overlay {
+  display: block;
 }

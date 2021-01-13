@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'gallery';
+
+@mixin position-item($x,$y) {
+    position: absolute;
+    left: $x;
+    top: $y;
+    transform: translate(-$x, -$y);
+}
+
+.dsignfly-portfolio-gallery{
+    @extend .gallery;
+
+    a {
+        position: relative;
+        z-index: 99;
+
+        .img-overlay {
+            display: none;
+            @include position-item(0, 0);
+            width: 380px;
+            height: 210px;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.6);
+            border-radius: 10px;
+            transition: 1s ease;
+        }
+
+        img[tabIndex="-1"] {
+            @include position-item(50%,50%);
+            width: 20px;
+            height: auto;
+        }
+
+        button {
+            @include position-item(50%,62%);
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            color: #fff;
+            font-weight: $dsignfly-font-weight-semi-bold;
+        }
+
+        &:hover img:not([tabIndex="-1"]){
+            transform: unset;
+        }
+
+        &:hover .img-overlay{
+            display: block;
+        }
+    }
+}
