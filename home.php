@@ -13,7 +13,7 @@ get_header();
 	<?php
 		$loop = new WP_Query(
 			array(
-				'post_type' => 'dsignfly_portfolio',
+				'post_type' => 'dsignfly_cpt',
 				'posts_per_page' => '6',
 			)
 		);

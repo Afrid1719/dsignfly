@@ -33,7 +33,7 @@
 			else :
 				$image_url = get_theme_file_uri( 'assets/images/home/logo.png' );
 				?>
-				<img src="<?php esc_attr_e( $image_url ); ?>" alt="<?php esc_attr_e( bloginfo('title') ); ?>" class="dsignfly-header-img" width="400" height="300"/>
+				<img src="<?php esc_attr_e( $image_url ); ?>" alt="<?php esc_attr_e( bloginfo( 'title' ) ); ?>" class="dsignfly-header-img" width="400" height="300"/>
 				<?php
 			endif;
 			?>
@@ -58,6 +58,8 @@
 			</form>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	
+	<?php if ( is_home() ) : ?>
 	<?php $banner_bg = get_theme_file_uri( 'assets/images/home/slider-image.png' ); ?> 
 	<div class="dsignfly-banner" style="background-image: url(<?php esc_attr_e( $banner_bg ); ?>);">
 		<a class="dsignfly-banner__left-arrow" href="#">
@@ -82,25 +84,24 @@
 			/>
 		</a>
 	</div><!-- Banner -->
-	<?php if(is_front_page()) :?>
-		<div class="dsignfly-features-container">
-			<div class="dsignfly-features__container">
-				<div class="advertising">
-					<img src="<?php esc_attr_e(get_theme_file_uri('assets/images/home/feature-icons-advertising.png')); ?>" width="50" height="50" alt="Advertising">
-					<a href="#">Advertising</a>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor montes..</p>
-				</div>
-				<div class="multimedia">
-					<img src="<?php esc_attr_e(get_theme_file_uri('assets/images/home/feature-icons-multimedia.png')); ?>" width="50" height="50" alt="Multimedia">
-					<a href="#">Multimedia</a>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor montes..</p>
-				</div>
-				<div class="photography">
-					<img src="<?php esc_attr_e(get_theme_file_uri('assets/images/home/feature-icons-photography.png')); ?>" width="50" height="50" alt="Photography">
-					<a href="#">Photography</a>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget montes..</p>
-				</div>
+	<?php endif; ?>
+	
+	<div class="dsignfly-features-container">
+		<div class="dsignfly-features__container">
+			<div class="advertising">
+				<img src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/feature-icons-advertising.png' ) ); ?>" width="50" height="50" alt="Advertising">
+				<a href="#">Advertising</a>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor montes..</p>
+			</div>
+			<div class="multimedia">
+				<img src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/feature-icons-multimedia.png' ) ); ?>" width="50" height="50" alt="Multimedia">
+				<a href="#">Multimedia</a>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor montes..</p>
+			</div>
+			<div class="photography">
+				<img src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/feature-icons-photography.png' ) ); ?>" width="50" height="50" alt="Photography">
+				<a href="#">Photography</a>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget montes..</p>
 			</div>
 		</div>
-
-	<?php endif; ?>
+	</div>
