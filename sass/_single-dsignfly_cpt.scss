@@ -1,0 +1,80 @@
+@import 'variables';
+
+.dsignfly-post-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 1170px;
+    margin: 50px auto 0;
+
+    main{
+        width: 65%;
+        padding-right: 15px;
+    }
+
+    aside{
+        width: 35%;
+        padding-left: 15px;
+    }
+
+    aside::after{
+        display: table;
+        content: '';
+        clear: both;
+    }
+}
+
+.dsignfly-single-post-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #62585f;
+}
+
+.dsignfly-single-post-title {
+    font: {
+        weight: $dsignfly-font-weight-regular;
+        size: 35px;
+    }
+    color: #62585f;
+    text-shadow: 0 2px 2px #fff;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-meta a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $primary-color;
+    font: {
+        font-weight: $dsignfly-font-weight-regular;
+        size: 14px;
+    } 
+
+    &:hover{ 
+        text-decoration: underline;
+    }
+}
+
+.comments-number {
+    font-size: 14px;
+    color: $primary-color;
+}
+
+.dsignfly-single-post-content{
+    font: {
+        weight: $dsignfly-font-weight-regular;
+        size: 14px;
+    }
+    color: #62585f;
+    line-height: 21px;
+
+    img {
+        display: block;
+        // width: 620px;
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+    }
+}
+

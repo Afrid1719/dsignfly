@@ -16,7 +16,7 @@
 
 .site-footer__welcome-header,
 .site-footer__contact-header {
-  font-weight: $dsignfly-font-weigh-regular;
+  font-weight: $dsignfly-font-weight-regular;
   font-size: 25px;
   color: #62585f;
   text-shadow: 0 2px 2px #fff;
@@ -24,7 +24,7 @@
 
 .site-footer__welcome-body,
 .site-footer__contact-body {
-  font-weight: $dsignfly-font-weigh-regular;
+  font-weight: $dsignfly-font-weight-regular;
   font-size: 14px;
   color: #62585f;
   line-height: 21px;
@@ -37,7 +37,7 @@
   color: $primary-color;
 
   font: {
-    weight: $dsignfly-font-weigh-regular;
+    weight: $dsignfly-font-weight-regular;
     size: 14px;
   }
 

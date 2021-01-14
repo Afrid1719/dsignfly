@@ -519,3 +519,69 @@ body {
   transform-origin: center;
   transform: rotate(-180deg);
 }
+
+.dsignfly-post-container {
+  display: flex;
+  flex-flow: row wrap;
+  width: 1170px;
+  margin: 50px auto 0;
+}
+.dsignfly-post-container main {
+  width: 65%;
+  padding-right: 15px;
+}
+.dsignfly-post-container aside {
+  width: 35%;
+  padding-left: 15px;
+}
+.dsignfly-post-container aside::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.dsignfly-single-post-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #62585f;
+}
+
+.dsignfly-single-post-title {
+  font-weight: 400;
+  font-size: 35px;
+  color: #62585f;
+  text-shadow: 0 2px 2px #fff;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-meta a {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #ef4634;
+  font-font-weight: 400;
+  font-size: 14px;
+}
+.post-meta a:hover {
+  text-decoration: underline;
+}
+
+.comments-number {
+  font-size: 14px;
+  color: #ef4634;
+}
+
+.dsignfly-single-post-content {
+  font-weight: 400;
+  font-size: 14px;
+  color: #62585f;
+  line-height: 21px;
+}
+.dsignfly-single-post-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
