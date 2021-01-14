@@ -1,14 +1,14 @@
 @import 'variables';
 @import 'gallery';
 
-@mixin position-item($x,$y) {
+@mixin position-item($x, $y) {
     position: absolute;
     left: $x;
     top: $y;
     transform: translate(-$x, -$y);
 }
 
-.dsignfly-portfolio-gallery{
+.dsignfly-portfolio-gallery {
     @extend .gallery;
 
     a {
@@ -21,19 +21,19 @@
             width: 380px;
             height: 210px;
             z-index: 100;
-            background-color: rgba(0,0,0,0.6);
+            background-color: rgba(0, 0, 0, 0.6);
             border-radius: 10px;
             transition: 1s ease;
         }
 
         img[tabIndex="-1"] {
-            @include position-item(50%,50%);
+            @include position-item(50%, 50%);
             width: 20px;
             height: auto;
         }
 
         button {
-            @include position-item(50%,62%);
+            @include position-item(50%, 62%);
             border: none;
             box-shadow: none;
             background: transparent;
@@ -41,12 +41,20 @@
             font-weight: $dsignfly-font-weight-semi-bold;
         }
 
-        &:hover img:not([tabIndex="-1"]){
+        &:hover img:not([tabIndex="-1"]) {
             transform: unset;
         }
 
-        &:hover .img-overlay{
+        &:hover .img-overlay {
             display: block;
         }
+    }
+}
+
+.dsignfly-tag-btn {
+    border-radius: 5px !important;
+
+    &:hover {
+        background-color: $primary-color !important;
     }
 }

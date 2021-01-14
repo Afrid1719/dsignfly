@@ -19,7 +19,7 @@ body {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
   -webkit-clip-path: inset(50%);
-  clip-path: inset(50%);
+          clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -34,7 +34,7 @@ body {
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   -webkit-clip-path: none;
-  clip-path: none;
+          clip-path: none;
   color: #21759b;
   display: block;
   font-size: 0.875rem;
@@ -211,7 +211,7 @@ body {
 
 .dsignfly-features__container {
   width: 1170px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
   display: flex;
   flex-flow: row wrap;
 }
@@ -357,8 +357,7 @@ body {
   transform: scale(1.125);
 }
 
-.gallery,
-.dsignfly-gallery {
+.gallery, .dsignfly-gallery {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -367,18 +366,15 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.gallery a,
-.dsignfly-gallery a {
+.gallery a, .dsignfly-gallery a {
   display: block;
 }
-.gallery a img,
-.dsignfly-gallery a img {
+.gallery a img, .dsignfly-gallery a img {
   width: 100%;
   border-radius: 10px;
   transition: transform 350ms ease-in;
 }
-.gallery a:hover img,
-.dsignfly-gallery a:hover img {
+.gallery a:hover img, .dsignfly-gallery a:hover img {
   transform: scale(1.125);
 }
 
@@ -425,8 +421,7 @@ body {
   text-align: center;
 }
 
-.gallery,
-.dsignfly-portfolio-gallery {
+.gallery, .dsignfly-portfolio-gallery {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -435,18 +430,15 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.gallery a,
-.dsignfly-portfolio-gallery a {
+.gallery a, .dsignfly-portfolio-gallery a {
   display: block;
 }
-.gallery a img,
-.dsignfly-portfolio-gallery a img {
+.gallery a img, .dsignfly-portfolio-gallery a img {
   width: 100%;
   border-radius: 10px;
   transition: transform 350ms ease-in;
 }
-.gallery a:hover img,
-.dsignfly-portfolio-gallery a:hover img {
+.gallery a:hover img, .dsignfly-portfolio-gallery a:hover img {
   transform: scale(1.125);
 }
 
@@ -491,4 +483,11 @@ body {
 }
 .dsignfly-portfolio-gallery a:hover .img-overlay {
   display: block;
+}
+
+.dsignfly-tag-btn {
+  border-radius: 5px !important;
+}
+.dsignfly-tag-btn:hover {
+  background-color: #ef4634 !important;
 }
