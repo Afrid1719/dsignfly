@@ -27,11 +27,13 @@
 			</div>
 		</header>
 
-				<?php
+                <?php
+                $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
 				$loop = new WP_Query(
 					array(
 						'post_type'      => 'dsignfly_cpt',
 						'posts_per_page' => '15',
+						'paged'          => $paged,
 					)
 				);
 
@@ -58,8 +60,10 @@
 				<div class="no-posts-found">It looks like you don't have any post.</div>
 					<?php
 				}
+
+				dsignfly_pagination_bar( $loop );
 				?>
 	</main>
 
-				<?php
-				get_footer();
+<?php
+get_footer();

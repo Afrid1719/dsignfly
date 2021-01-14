@@ -163,3 +163,52 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+if ( ! function_exists( 'dsignfly_pagination_bar' ) ) :
+	/**
+	 * Pagination links
+	 *
+	 * @param WP_Query $dsignfly_query
+	 * @return void
+	 */
+	function dsignfly_pagination_bar( $dsignfly_query ) {
+		$total_pages = $dsignfly_query->max_num_pages;
+
+		if ( $total_pages > 1 ) {
+			$current_page = max( 1, get_query_var( 'paged' ) );
+			$big          = 999999999;
+
+			$prev_link = '<img 
+							src="' . get_theme_file_uri( 'assets/images/other pages/pagination-arrow.png' ) . '"
+							class="dsignfly-pagination-prev"
+							alt="Previous Page"
+							/>';
+			$next_link = '<img 
+							src="' . get_theme_file_uri( 'assets/images/other pages/pagination-arrow.png' ) . '"
+							class="dsignfly-pagination-next"
+							alt="Next Page"
+							/>';
+
+			$page_links = paginate_links(
+				array(
+					'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+					'format'    => '?paged=%#%',
+					'prev_next' => true,
+					'total'     => $total_pages,
+					'current'   => $current_page,
+					'type'      => 'array',
+					'prev_text' => $prev_link,
+					'next_text' => $next_link,
+				)
+			);
+
+			if ( is_array( $page_links ) ) {
+				echo '<ul class="dsignfly-pagination">';
+				foreach ( $page_links as $link ) {
+					echo '<li>' . $link . '</li>';
+				}
+				echo '</ul>';
+			}
+		}
+	}
+endif;

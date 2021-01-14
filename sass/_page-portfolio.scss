@@ -58,3 +58,36 @@
         background-color: $primary-color !important;
     }
 }
+
+.dsignfly-pagination {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        font: {
+            weight: $dsignfly-font-weight-semi-bold;
+            size: 16px;
+        }
+
+        a,span {
+            display: inline-block;
+            padding: 7px;
+            text-decoration: none;
+            color: inherit;
+            color: #222;
+            border-radius: 3px;
+        }   
+
+        &:hover a{
+            background-color: #ef4634;
+            color: #fff;
+        }
+    }
+}
+
+.dsignfly-pagination-prev {
+    transform-origin: center;
+    transform: rotate(-180deg);
+}
