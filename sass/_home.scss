@@ -19,8 +19,10 @@
             weight: $dsignfly-font-weight-semi-light;
             size: 45px;
         }
+
         color: #62585f;
         text-shadow: 0 2px 2px #fff;
+
         margin: {
             top: 16px;
             bottom: 16px;
@@ -31,17 +33,19 @@
         display: inline-block;
         padding: 10px;
         line-height: 1;
+
         border: {
             radius: 3px;
             style: none;
         }
+
         font-size: 16px;
         background-color: #222;
         color: #fff;
         max-height: 36px;
-        
-        &:hover{
-            background-color: lighten( #222, 30%);
+
+        &:hover {
+            background-color: lighten(#222, 30%);
             cursor: pointer;
         }
     }

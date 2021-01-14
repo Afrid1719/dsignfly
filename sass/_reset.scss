@@ -1,10 +1,11 @@
 @import 'variables';
 
-*{
+* {
     box-sizing: border-box;
 }
 
-html, body{
+html,
+body {
     padding: 0;
     margin: 0;
     font-family: $dsignfly-font-family;
