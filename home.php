@@ -17,10 +17,6 @@ get_header();
 				'posts_per_page' => '6',
 			)
 		);
-
-		require_once ABSPATH . 'wp-content/WP_Logger.php';
-
-				WP_Logger::logger( $loop );
 		?>
 		<header class="dsignfly-gallery-header">
 			<h2><?php esc_html_e( 'D\'SIGNFLY THE SOUL' ); ?></h2>
