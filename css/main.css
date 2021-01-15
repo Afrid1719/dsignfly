@@ -400,7 +400,7 @@ body {
   margin-top: 16px;
   margin-bottom: 16px;
 }
-.dsignfly-gallery-header button {
+.dsignfly-gallery-header button, .dsignfly-gallery-header a[role=button] {
   display: inline-block;
   padding: 10px;
   line-height: 1;
@@ -411,9 +411,12 @@ body {
   color: #fff;
   max-height: 36px;
 }
-.dsignfly-gallery-header button:hover {
+.dsignfly-gallery-header button:hover, .dsignfly-gallery-header a[role=button]:hover {
   background-color: #6f6f6f;
   cursor: pointer;
+}
+.dsignfly-gallery-header a[role=button] {
+  text-decoration: none;
 }
 
 .no-posts-found {

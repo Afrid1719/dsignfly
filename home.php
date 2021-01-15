@@ -17,16 +17,18 @@ get_header();
 				'posts_per_page' => '6',
 			)
 		);
+
+		$view_all_link = get_permalink(get_page_by_title('Portfolio'));
 		?>
 		<header class="dsignfly-gallery-header">
 			<h2><?php esc_html_e( 'D\'SIGNFLY THE SOUL' ); ?></h2>
-			<button 
-				type="button" 
+			<a
+				role="button" 
 				class="dsignfly-view-all-btn"
-				<?php echo ( ! $loop->have_posts() ) ? 'disbaled aria-hidden="true"' : ''; ?>
+				<?php echo ( $loop->have_posts() ) ? 'href="'. $view_all_link.'"' : ''; ?>
 			>
-				view all
-			</button>
+				View all
+			</a>
 		</header>
 
 		<?php
