@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -694,4 +695,118 @@ body {
   width: 100%;
   height: auto;
   border-radius: 3px;
+}
+
+.dsignfly-post-container .comments-wrapper {
+  margin-top: 50px;
+}
+.dsignfly-post-container .comments-wrapper .bars {
+  font-size: 18px;
+  color: #62585f;
+  width: 100%;
+  padding: 8px 0;
+  border-top: 1px solid #62585f;
+  border-bottom: 1px solid #62585f;
+}
+
+#comments a {
+  color: #ef4634;
+}
+#comments .comment-list {
+  padding: 0;
+  margin: 0;
+}
+#comments .comment-list .comment,
+#comments .comment-list .comment-body {
+  overflow: auto;
+}
+#comments .vcard .fn {
+  text-transform: capitalize;
+  color: #ef4634;
+}
+#comments .vcard .fn a {
+  text-decoration: none;
+}
+#comments .vcard .fn a:hover {
+  text-decoration: underline;
+}
+#comments .vcard,
+#comments .commentmetadata {
+  display: inline-block;
+  color: #62585f;
+  font-size: 0.9rem;
+}
+#comments .commentmetadata a {
+  font-size: 0.9rem;
+  color: #62585f;
+}
+#comments .commentmetadata .comment-edit-link {
+  color: #ef4634;
+}
+#comments .comment-body p {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  color: #62585f;
+  margin-top: 10px;
+}
+#comments .comment-body .reply {
+  display: inline-block;
+  float: right;
+}
+#comments .comment-body .reply a {
+  color: #ef4634;
+  font-size: 1rem;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+#comments .comment-body .reply a::before {
+  font-family: "dashicons";
+  content: "";
+  color: #ef4634;
+  font-size: 1rem;
+  vertical-align: middle;
+}
+
+#comments #reply-title,
+#comments .comment-notes,
+#comments .comment-form-comment > label:first-child,
+#comments .comment-form-cookies-consent {
+  display: none;
+}
+#comments .comment-form-comment {
+  margin-bottom: 5px;
+}
+#comments .comment-form-comment textarea {
+  width: 100%;
+}
+#comments .comment-form .logged-in-as a {
+  color: #ef4634;
+}
+#comments .post-comment {
+  font-size: 1.4rem;
+  color: #62585f;
+  margin-bottom: 5px;
+}
+#comments .comment-form-author,
+#comments .comment-form-email,
+#comments .comment-form-url {
+  margin: 0;
+  padding: 0;
+  width: 33.33%;
+  float: left;
+}
+#comments .comment-form-author input,
+#comments .comment-form-email input,
+#comments .comment-form-url input {
+  width: 95%;
+}
+#comments .form-submit #submit {
+  float: right;
+  padding: 10px;
+  color: #FFF;
+  background-color: #222222;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 35px;
 }
