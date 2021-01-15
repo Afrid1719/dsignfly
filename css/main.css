@@ -531,11 +531,11 @@ body {
   margin: 50px auto 0;
 }
 .dsignfly-blog main {
-  width: 60%;
+  width: 65%;
   padding-right: 20px;
 }
 .dsignfly-blog aside {
-  width: 40%;
+  width: 35%;
   padding-left: 20px;
 }
 
@@ -812,4 +812,31 @@ body {
   border-radius: 5px;
   margin-top: 15px;
   margin-bottom: 35px;
+}
+
+.widget-title {
+  font-weight: 400;
+  font-size: 25px;
+  box-shadow: 0 2px 2px #fff;
+  color: #62585f;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #62585f;
+}
+
+.dsignfly-portfolio-widget-gallery {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-around;
+  grid-gap: 10px;
+}
+.dsignfly-portfolio-widget-gallery a {
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+.dsignfly-portfolio-widget-gallery img {
+  display: block;
+  max-width: 100%;
+  border-radius: 5px;
 }
