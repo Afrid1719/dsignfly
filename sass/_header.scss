@@ -1,275 +1,398 @@
- @import 'variables';
+@import "variables";
+@import "mixin";
 
- /* Text meant only for screen readers. */
- .screen-reader-text {
-     border: 0;
-     clip: rect(1px, 1px, 1px, 1px);
-     clip-path: inset(50%);
-     height: 1px;
-     margin: -1px;
-     overflow: hidden;
-     padding: 0;
-     position: absolute !important;
-     width: 1px;
-     word-wrap: normal !important;
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 
+  &:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+  }
+}
 
-     &:focus {
-         background-color: #f1f1f1;
-         border-radius: 3px;
-         box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-         clip: auto !important;
-         clip-path: none;
-         color: #21759b;
-         display: block;
-         font-size: 0.875rem;
-         font-weight: 700;
-         height: auto;
-         left: 5px;
-         line-height: normal;
-         padding: 15px 23px 14px;
-         text-decoration: none;
-         top: 5px;
-         width: auto;
-         z-index: 100000;
-     }
- }
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+  outline: 0;
+}
 
- /* Do not show the outline on the skip link target. */
- #primary[tabindex="-1"]:focus {
-     outline: 0;
- }
+.site-header {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 105px;
+  padding: 1rem 0;
+  box-shadow: 0 5px 5px darken($primary-color, 30%);
+  z-index: 1000;
+}
 
- .site-header {
-     display: flex;
-     flex-flow: row wrap;
-     min-height: 105px;
-     padding: 1rem 0;
-     box-shadow: 0 5px 5px darken($primary-color, 30%);
-     z-index: 10000;
- }
+.site-branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: 100%;
 
- .site-branding {
-     width: 40%;
+  img {
+    display: block;
+    width: 30%;
+    height: auto;
+  }
+}
 
-     img {
-         display: block;
-         width: 30%;
-         height: auto;
-         margin: 0 auto;
-     }
- }
+.main-navigation {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  vertical-align: middle;
 
- .main-navigation {
-     display: flex;
-     align-items: center;
-     width: 60%;
-     vertical-align: middle;
- }
+  .menu-toggle {
+    display: none;
+  }
+}
 
- .dsignfly-menu,
- .dsignfly-search {
-     display: inline-block;
- }
+.dsignfly-menu,
+.dsignfly-search {
+  display: inline-block;
+}
 
+.dsignfly-menu__list {
+  list-style-type: none;
+  padding-left: 0;
 
- .dsignfly-menu__list {
-     list-style-type: none;
-     padding-left: 0;
+  > .menu-item {
+    display: inline-block;
 
-     >.menu-item {
-         display: inline-block;
+    a {
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-weight: $dsignfly-font-weight-bold;
+      font-size: 14px;
+      color: #222;
+      transition: 500ms ease-in-out;
+      text-decoration: none;
 
-         a {
-             padding: 6px 10px;
-             border-radius: 3px;
-             font-weight: $dsignfly-font-weight-bold;
-             font-size: 14px;
-             color: #222;
-             transition: 500ms ease-in-out;
-             text-decoration: none;
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}
 
-             &:hover {
-                 background-color: #ef4643;
-                 color: #fff;
-             }
-         }
-     }
- }
+.dsignfly-search {
+  padding: 0 20px;
+  margin-top: -5px;
 
+  .search-input {
+    width: 150px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #62585f;
+  }
+}
 
+.search-submit-btn {
+  padding-top: 4px;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 25px;
+  object-fit: cover;
+  object-position: 0 2px;
+  vertical-align: baseline;
+}
 
+.dsignfly-banner {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  height: 544px;
+  padding: 40px 24px;
+  margin-bottom: 3px;
+  z-index: -1;
 
- .dsignfly-search {
-     padding: 0 20px;
-     margin-top: -5px;
+  background: {
+    repeat: no-repeat;
+    size: cover;
+    position: center;
+    origin: padding-box;
+  }
+}
 
-     .search-input {
-         width: 150px;
-         height: 20px;
-         background-color: #fff;
-         border-radius: 3px;
-         border: 1px solid #62585f;
-     }
- }
+.dsignfly-banner__left-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 20%;
+}
 
- .search-submit-btn {
-     padding: 0;
-     border: none;
-     margin-top: 4px;
-     cursor: pointer;
- }
+.dsignfly-banner__left-arrow-img {
+  width: 150px;
+  height: 70px;
+  object-fit: cover;
+  object-position: 70px 20px;
+}
 
- .search-submit-img {
-     width: 20px;
-     height: 20px;
-     object-fit: cover;
-     object-position: 0 -4%;
- }
+.dsignfly-banner__text {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: flex-end;
+}
 
- .dsignfly-banner {
-     display: flex;
-     flex-flow: row nowrap;
-     width: 100%;
-     height: 544px;
-     padding: 40px 24px;
-     margin-bottom: 3px;
-     z-index: -1;
+.dsignfly-banner__header-text {
+  font-weight: $dsignfly-font-weight-bold;
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 0px 2px 2px #950904;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
 
-     background: {
-         repeat: no-repeat;
-         size: cover;
-         position: center;
-         origin: padding-box;
-     }
- }
+.dsignfly-banner__body-text {
+  font-weight: $dsignfly-font-weight-semi-bold;
+  font-size: 16px;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
 
- .dsignfly-banner__left-arrow {
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-end;
-     align-items: center;
-     width: 20%;
- }
+.dsignfly-banner__right-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+}
 
- .dsignfly-banner__left-arrow-img {
-     width: 150px;
-     height: 70px;
-     object-fit: cover;
-     object-position: 70px 20px;
- }
+.dsignfly-banner__right-arrow-img {
+  width: 150px;
+  height: 70px;
+  object-fit: cover;
+  object-position: -70px 20px;
+}
 
- .dsignfly-banner__text {
-     display: flex;
-     flex-direction: column;
-     width: 60%;
-     justify-content: flex-end;
- }
+.dsignfly-features {
+  width: 100%;
 
- .dsignfly-banner__header-text {
-     font-weight: $dsignfly-font-weight-bold;
-     font-size: 70px;
-     color: #fff;
-     text-shadow: 0px 2px 2px #950904;
-     text-align: center;
-     margin-top: 16px;
-     margin-bottom: 16px;
- }
+  background: {
+    image: url("../assets/images/home/features-repeatable-bg.png");
+    repeat: repeat;
+  }
+}
 
- .dsignfly-banner__body-text {
-     font-weight: $dsignfly-font-weight-semi-bold;
-     font-size: 1rem;
-     color: #fff;
-     line-height: 24px;
-     text-align: center;
-     margin-top: 8px;
-     margin-bottom: 8px;
- }
+.dsignfly-features__container {
+  width: 1170px;
+  margin: 0 auto 24px;
+  display: flex;
+  flex-flow: row wrap;
 
- .dsignfly-banner__right-arrow {
-     display: flex;
-     flex-direction: row;
-     justify-content: flex-start;
-     align-items: center;
-     width: 20%;
- }
+  > div {
+    width: 33.333%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
 
- .dsignfly-banner__right-arrow-img {
-     width: 150px;
-     height: 70px;
-     object-fit: cover;
-     object-position: -70px 20px;
- }
+  .advertising,
+  .multimedia,
+  .photography {
+    img {
+      grid-area: 1/1/3/2;
+      justify-self: center;
+      align-self: center;
+    }
 
- .dsignfly-features-container {
-     width: 100%;
+    a {
+      display: block;
+      grid-area: 1/2/2/4;
 
-     background: {
-         image: url('../assets/images/home/features-repeatable-bg.png');
-         repeat: repeat;
-     }
- }
+      margin: {
+        top: 10px;
+        bottom: 4px;
+      }
 
- .dsignfly-features__container {
-     width: 1170px;
-     margin: 0 auto 24px;
-     display: flex;
-     flex-flow: row wrap;
+      font: {
+        size: 20px;
+        weight: $dsignfly-font-weight-bold;
+      }
 
-     >div {
-         width: 33.333%;
-         display: grid;
-         grid-template-columns: repeat(3, 1fr);
-         grid-template-rows: auto;
-     }
+      text-decoration: none;
+      color: #ef4634;
+      text-shadow: 0 2px 2px #fff;
 
-     .advertising,
-     .multimedia,
-     .photography {
-         img {
-             grid-area: 1/1/3/2;
-             justify-self: center;
-             align-self: center;
-         }
+      &:hover {
+        color: #222;
+      }
 
-         a {
-             display: block;
-             grid-area: 1/2/2/4;
+      @include media($md-breakpoint) {
+        & {
+          margin-top: 6px;
+        }
+      }
+    }
 
-             margin: {
-                 top: 10px;
-                 bottom: 4px;
-             }
+    p {
+      grid-area: 2/2/3/4;
 
-             font: {
-                 size: 20px;
-                 weight: $dsignfly-font-weight-bold;
-             }
+      margin: {
+        top: 4px;
+        bottom: 10px;
+      }
 
-             text-decoration: none;
-             color: #ef4634;
-             text-shadow: 0 2px 2px #fff;
+      font: {
+        size: 13px;
+        weight: $dsignfly-font-weight-regular;
+      }
 
-             &:hover {
-                 color: #222;
-             }
-         }
+      color: #333;
+      line-height: 19.5px;
+      @include media($md-breakpoint) {
+        & {
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+}
 
-         p {
-             grid-area: 2/2/3/4;
+@include media($lg-breakpoint) {
+  .site-branding {
+    width: 28%;
+  }
 
-             margin: {
-                 top: 4px;
-                 bottom: 10px;
-             }
+  .main-navigation {
+    width: 72%;
+  }
 
-             font: {
-                 size: 13px;
-                 weight: $dsignfly-font-weight-regular;
-             }
+  .dsignfly-features__container {
+    width: 100%;
+    padding: {
+      left: 12px;
+      right: 12px;
+    }
+  }
+}
 
-             color: #333;
-             line-height: 19.5px;
-         }
-     }
- }
+@include media($md-breakpoint) {
+  .site-header {
+    height: 85px;
+  }
+
+  .dsignfly-banner {
+    height: 500px;
+  }
+}
+
+@include media($sm-breakpoint) {
+  .site-branding {
+    width: 75%;
+  }
+  .main-navigation {
+    width: 25%;
+
+    .menu-toggle {
+      display: block;
+      transform: scale(0.75);
+    }
+  }
+
+  .dsignfly-search {
+    display: none;
+  }
+
+  .dsignfly-menu__list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+    background-image: url("../assets/images/repeatable-bg.png");
+    z-index: 1001;
+
+    .menu-item {
+      display: block;
+      width: 100%;
+
+      a {
+        display: block;
+        width: 100%;
+        padding: {
+          left: 10px;
+          top: 6px;
+          bottom: 6px;
+        }
+      }
+    }
+  }
+
+  .main-navigation.toggled ul {
+    display: block;
+  }
+
+  .dsignfly-banner{
+    height: 400px;
+    padding: 24px 14px;
+  }
+
+  .dsignfly-banner__header-text{
+    font-size: 44px;
+  }
+
+  .dsignfly-banner__body-text{
+    font-size: 14px;
+  }
+  
+  .dsignfly-banner__left-arrow-img {
+    object-position: 70px 30px;
+  }
+
+  .dsignfly-banner__right-arrow-img {
+    object-position: -70px 30px;
+  }
+
+  .dsignfly-features__container{
+      width: 100%;
+      flex-direction: column;
+      padding: {
+          top: 15px;
+          bottom: 15px;
+      } 
+
+      >div {
+        width: 100%;
+      }
+  }
+}

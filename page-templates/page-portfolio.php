@@ -7,7 +7,7 @@
 ?>
 
 	<main class="dsignfly-main">
-		<header class="dsignfly-gallery-header">
+		<header class="dsignfly-gallery-header" id="portfolio-gallery-header">
 			<h2><?php esc_html_e( 'DESIGN THE SOUL' ); ?></h2>
 			<?php $features = array( 'Advertising', 'Multimedia', 'Photography' ); ?>
 			<div class="dsignfly-tags">
@@ -27,9 +27,9 @@
 			</div>
 		</header>
 
-                <?php
-                $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-				$loop = new WP_Query(
+				<?php
+				$paged = ( get_query_var( 'paged' ) == 0 ) ? 1 : get_query_var( 'paged' );
+				$loop  = new WP_Query(
 					array(
 						'post_type'      => 'dsignfly_cpt',
 						'posts_per_page' => '15',

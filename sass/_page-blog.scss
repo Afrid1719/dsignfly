@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixin';
 
 .dsignfly-blog {
     display: flex;
@@ -6,28 +7,33 @@
     width: 1170px;
     margin: 50px auto 0;
 
-    main{
+    main {
         width: 65%;
         padding-right: 20px;
     }
 
-    aside{
+    aside {
         width: 35%;
         padding-left: 20px;
     }
 }
 
-.dsignfly-blog__main-header{
+.dsignfly-blog__main-header {
     border-bottom: 1px solid #62585f;
 
-    h2{
+    h2 {
         font: {
             weight: $dsignfly-font-weight-light;
             size: 45px;
         }
+
         color: #62585f;
         text-shadow: 0 2px 2px #fff;
-        margin-bottom: 24px;
+
+        margin : {
+            top: 24px;
+            bottom: 24px;
+        }
     }
 }
 
@@ -35,7 +41,7 @@
     margin: 24px auto;
 }
 
-.dsignfly-blog__post-header{
+.dsignfly-blog__post-header {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -45,21 +51,21 @@
     transition: 500ms ease;
     margin-bottom: 16px;
 
-    &:hover{
+    &:hover {
         background-color: $primary-color;
     }
 }
 
-.dsignfly-blog__post-header-column-one{
+.dsignfly-blog__post-header-column-one {
     display: block;
     border-right: 1px solid #fff;
     padding: 4px 12px;
 
-    .post-day{
+    .post-day {
         font-size: 24px;
     }
 
-    .post-month{
+    .post-month {
         font-size: 14px;
         text-transform: uppercase;
     }
@@ -70,6 +76,7 @@
     margin: 0;
     font-size: 22px;
     font-weight: $dsignfly-font-weight-semi-bold;
+
     padding: {
         top: 14px;
         bottom: 8px;
@@ -77,11 +84,11 @@
     }
 }
 
-.dsignfly-blog__post-content{
+.dsignfly-blog__post-content {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    
+
     img {
         display: block;
         width: 32%;
@@ -96,22 +103,23 @@
     .post-info {
         font: {
             size: 14px;
-            weight: $dsignfly-font-weight-regular;    
+            weight: $dsignfly-font-weight-regular;
         }
+
         padding-bottom: 8px;
         border-bottom: 1px solid #62585f;
     }
 
-    .post-meta>a{
+    .post-meta>a {
         color: $primary-color;
         text-decoration: none;
     }
 
-    .post-meta>a[href]:hover{
+    .post-meta>a[href]:hover {
         text-decoration: underline;
     }
 
-    .post-comments{
+    .post-comments {
         color: $primary-color;
     }
 
@@ -119,11 +127,13 @@
         margin: {
             top: 12px;
             bottom: 12px;
-        } 
+        }
+
         font: {
             size: 14px;
             weight: $dsignfly-font-weight-regular;
         }
+
         line-height: 21px;
     }
 
@@ -132,14 +142,39 @@
             decoration: none;
             transform: uppercase;
         }
+
         color: $primary-color;
+
         font: {
             size: 14px;
             weight: $dsignfly-font-weight-regular;
         }
 
-        &:hover{
+        &:hover {
             text-decoration: underline;
+        }
+    }
+}
+
+@include media($lg-breakpoint) {
+    .dsignfly-blog {
+        width: 100%;
+
+        padding: {
+            left: 15px;
+            right: 15px;
+        }
+    }
+}
+
+@include media($sm-breakpoint) {
+    .dsignfly-blog {
+        main{
+            width: 100%;
+            padding-right: 0;
+        }
+        aside{
+            display: none;
         }
     }
 }

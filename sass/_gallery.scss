@@ -1,3 +1,6 @@
+@import 'variables';
+@import 'mixin';
+
 .gallery {
     display: grid;
     width: 100%;
@@ -22,5 +25,23 @@
         &:hover img {
             transform: scale(1.125);
         }
+
+        @include media($lg-breakpoint) {
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+
+        @include media($sm-breakpoint) {
+            &:hover img {
+                transform: scale(1.02);
+            }
+        }
     }
+
+    @include media($md-breakpoint) {
+        grid-gap: 10px;
+    }
+
+    
 }

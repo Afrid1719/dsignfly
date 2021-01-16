@@ -41,6 +41,13 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" data-toggle="collapse" data-target="#site-navmenu__list" aria-controls="primary-menu" aria-expanded="false">
+				<svg viewBox="0 0 100 80" width="40" height="40" enable-background="new 0 0 512 512">
+					<rect width="100" height="20"></rect>
+					<rect y="30" width="100" height="20"></rect>
+					<rect y="60" width="100" height="20"></rect>
+				</svg>
+			</button>
 			<?php
 			wp_nav_menu(
 				array(
@@ -52,9 +59,9 @@
 				)
 			);
 			?>
-			<form class="dsignfly-search">
-				<input type="text" class="search-input" />
-				<button class="search-submit-btn"><img src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/search-icon.png' ) ); ?>" class="search-submit-img" /></button>                    
+			<form class="dsignfly-search" method="get" action="<?php bloginfo('url'); ?>">
+				<input type="text" class="search-input" id="search" name="s" value="<?php the_search_query(); ?>" />
+				<input type="image" class="search-submit-btn" src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/search-icon.png' ) ); ?>" />                
 			</form>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
@@ -86,7 +93,7 @@
 	</div><!-- Banner -->
 	<?php endif; ?>
 	
-	<div class="dsignfly-features-container">
+	<div class="dsignfly-features">
 		<div class="dsignfly-features__container">
 			<div class="advertising">
 				<img src="<?php esc_attr_e( get_theme_file_uri( 'assets/images/home/feature-icons-advertising.png' ) ); ?>" width="50" height="50" alt="Advertising">

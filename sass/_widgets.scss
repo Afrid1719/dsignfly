@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixin';
 
 .widget-title {
     font: {
@@ -17,17 +18,43 @@
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-around;
-    grid-gap: 10px;
 
     a{
         display: block;
         width: 80px;
         height: 80px;
+        margin-bottom: 10px;
     }
 
     img {
         display: block;
         max-width: 100%;    
         border-radius: 5px;
+    }
+}
+
+@include media($lg-breakpoint) {
+    .dsignfly-portfolio-widget-gallery {
+        a {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@include media($md-breakpoint) {
+    .dsignfly-portfolio-widget-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        
+        a {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+
+            &:nth-child(7), &:nth-child(8)  {
+                display: none;
+            }
+        }
     }
 }

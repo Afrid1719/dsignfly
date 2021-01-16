@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixin';
 
 .dsignfly-post-container {
     display: flex;
@@ -29,6 +30,7 @@
     }
     color: #62585f;
     text-shadow: 0 2px 2px #fff;
+    margin-top: 24px;
 }
 
 .post-info {
@@ -72,3 +74,27 @@
     }
 }
 
+@include media($lg-breakpoint) {
+    .dsignfly-post-container {
+        width: 100%;
+        padding: {
+            left: 15px;
+            right: 15px;
+        }
+    }
+}
+
+@include media($sm-breakpoint) {
+    .dsignfly-post-container{
+        margin-top: 30px;
+        
+        main{
+            width: 100%;
+            padding-right: 0;
+        }
+
+        aside {
+            display: none;
+        }
+    }
+}

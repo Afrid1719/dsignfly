@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'gallery';
+@import 'mixin';
 
 .dsignfly-main {
     display: block;
@@ -63,6 +64,23 @@
 
 .no-posts-found {
     font-size: 24px;
+    margin: 16px auto;
     color: #222222;
     text-align: center;
+}
+
+@include media($lg-breakpoint) {
+    .dsignfly-main{
+        width: 100%;
+        padding: {
+            left: 15px;
+            right: 15px;
+        }
+    }
+}
+
+@include media($sm-breakpoint) {
+    .dsignfly-gallery-header h2{
+        font-size: 28px;
+    }
 }

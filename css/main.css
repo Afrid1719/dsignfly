@@ -8,6 +8,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: Open sans;
+  overflow-x: hidden;
 }
 
 body {
@@ -56,22 +57,27 @@ body {
 }
 
 .site-header {
+  position: relative;
   display: flex;
   flex-flow: row wrap;
-  min-height: 105px;
+  width: 100%;
+  height: 105px;
   padding: 1rem 0;
   box-shadow: 0 5px 5px #80150a;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .site-branding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40%;
+  height: 100%;
 }
 .site-branding img {
   display: block;
   width: 30%;
   height: auto;
-  margin: 0 auto;
 }
 
 .main-navigation {
@@ -79,6 +85,9 @@ body {
   align-items: center;
   width: 60%;
   vertical-align: middle;
+}
+.main-navigation .menu-toggle {
+  display: none;
 }
 
 .dsignfly-menu,
@@ -103,7 +112,7 @@ body {
   text-decoration: none;
 }
 .dsignfly-menu__list > .menu-item a:hover {
-  background-color: #ef4643;
+  background-color: #ef4634;
   color: #fff;
 }
 
@@ -120,17 +129,14 @@ body {
 }
 
 .search-submit-btn {
-  padding: 0;
+  padding-top: 4px;
   border: none;
-  margin-top: 4px;
   cursor: pointer;
-}
-
-.search-submit-img {
   width: 20px;
-  height: 20px;
+  height: 25px;
   object-fit: cover;
-  object-position: 0 -4%;
+  object-position: 0 2px;
+  vertical-align: baseline;
 }
 
 .dsignfly-banner {
@@ -181,7 +187,7 @@ body {
 
 .dsignfly-banner__body-text {
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 16px;
   color: #fff;
   line-height: 24px;
   text-align: center;
@@ -204,7 +210,7 @@ body {
   object-position: -70px 20px;
 }
 
-.dsignfly-features-container {
+.dsignfly-features {
   width: 100%;
   background-image: url("../assets/images/home/features-repeatable-bg.png");
   background-repeat: repeat;
@@ -247,6 +253,13 @@ body {
 .dsignfly-features__container .photography a:hover {
   color: #222;
 }
+@media (max-width: 768px) {
+  .dsignfly-features__container .advertising a,
+.dsignfly-features__container .multimedia a,
+.dsignfly-features__container .photography a {
+    margin-top: 6px;
+  }
+}
 .dsignfly-features__container .advertising p,
 .dsignfly-features__container .multimedia p,
 .dsignfly-features__container .photography p {
@@ -258,7 +271,112 @@ body {
   color: #333;
   line-height: 19.5px;
 }
+@media (max-width: 768px) {
+  .dsignfly-features__container .advertising p,
+.dsignfly-features__container .multimedia p,
+.dsignfly-features__container .photography p {
+    margin-bottom: 6px;
+  }
+}
 
+@media (max-width: 1024px) {
+  .site-branding {
+    width: 28%;
+  }
+
+  .main-navigation {
+    width: 72%;
+  }
+
+  .dsignfly-features__container {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .site-header {
+    height: 85px;
+  }
+
+  .dsignfly-banner {
+    height: 500px;
+  }
+}
+@media (max-width: 425px) {
+  .site-branding {
+    width: 75%;
+  }
+
+  .main-navigation {
+    width: 25%;
+  }
+  .main-navigation .menu-toggle {
+    display: block;
+    transform: scale(0.75);
+  }
+
+  .dsignfly-search {
+    display: none;
+  }
+
+  .dsignfly-menu__list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+    background-image: url("../assets/images/repeatable-bg.png");
+    z-index: 1001;
+  }
+  .dsignfly-menu__list .menu-item {
+    display: block;
+    width: 100%;
+  }
+  .dsignfly-menu__list .menu-item a {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .main-navigation.toggled ul {
+    display: block;
+  }
+
+  .dsignfly-banner {
+    height: 400px;
+    padding: 24px 14px;
+  }
+
+  .dsignfly-banner__header-text {
+    font-size: 44px;
+  }
+
+  .dsignfly-banner__body-text {
+    font-size: 14px;
+  }
+
+  .dsignfly-banner__left-arrow-img {
+    object-position: 70px 30px;
+  }
+
+  .dsignfly-banner__right-arrow-img {
+    object-position: -70px 30px;
+  }
+
+  .dsignfly-features__container {
+    width: 100%;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .dsignfly-features__container > div {
+    width: 100%;
+  }
+}
 .site-footer {
   display: flex;
   flex-flow: row wrap;
@@ -337,6 +455,23 @@ body {
   text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+  .site-footer {
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .site-footer__column-one, .site-footer__column-two {
+    width: 100%;
+  }
+}
 .gallery {
   display: grid;
   width: 100%;
@@ -356,6 +491,21 @@ body {
 }
 .gallery a:hover img {
   transform: scale(1.125);
+}
+@media (max-width: 1024px) {
+  .gallery a:hover img {
+    transform: scale(1.05);
+  }
+}
+@media (max-width: 425px) {
+  .gallery a:hover img {
+    transform: scale(1.02);
+  }
+}
+@media (max-width: 768px) {
+  .gallery {
+    grid-gap: 10px;
+  }
 }
 
 .gallery, .dsignfly-gallery {
@@ -377,6 +527,21 @@ body {
 }
 .gallery a:hover img, .dsignfly-gallery a:hover img {
   transform: scale(1.125);
+}
+@media (max-width: 1024px) {
+  .gallery a:hover img, .dsignfly-gallery a:hover img {
+    transform: scale(1.05);
+  }
+}
+@media (max-width: 425px) {
+  .gallery a:hover img, .dsignfly-gallery a:hover img {
+    transform: scale(1.02);
+  }
+}
+@media (max-width: 768px) {
+  .gallery, .dsignfly-gallery {
+    grid-gap: 10px;
+  }
 }
 
 .dsignfly-main {
@@ -421,10 +586,23 @@ body {
 
 .no-posts-found {
   font-size: 24px;
+  margin: 16px auto;
   color: #222222;
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .dsignfly-main {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .dsignfly-gallery-header h2 {
+    font-size: 28px;
+  }
+}
 .gallery, .dsignfly-portfolio-gallery {
   display: grid;
   width: 100%;
@@ -444,6 +622,21 @@ body {
 }
 .gallery a:hover img, .dsignfly-portfolio-gallery a:hover img {
   transform: scale(1.125);
+}
+@media (max-width: 1024px) {
+  .gallery a:hover img, .dsignfly-portfolio-gallery a:hover img {
+    transform: scale(1.05);
+  }
+}
+@media (max-width: 425px) {
+  .gallery a:hover img, .dsignfly-portfolio-gallery a:hover img {
+    transform: scale(1.02);
+  }
+}
+@media (max-width: 768px) {
+  .gallery, .dsignfly-portfolio-gallery {
+    grid-gap: 10px;
+  }
 }
 
 .dsignfly-portfolio-gallery a {
@@ -524,6 +717,36 @@ body {
   transform: rotate(-180deg);
 }
 
+@media (max-width: 1024px) {
+  .dsignfly-portfolio-gallery a .img-overlay {
+    width: 321px;
+  }
+}
+@media (max-width: 768px) {
+  .dsignfly-portfolio-gallery a .img-overlay {
+    width: 364px;
+  }
+}
+@media (max-width: 425px) {
+  .dsignfly-portfolio-gallery a .img-overlay {
+    width: 395px;
+  }
+
+  #portfolio-gallery-header {
+    flex-direction: column;
+  }
+  #portfolio-gallery-header .dsignfly-tags {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .dsignfly-portfolio-gallery a .img-overlay {
+    width: 345 px;
+  }
+}
 .dsignfly-blog {
   display: flex;
   flex-flow: row wrap;
@@ -547,6 +770,7 @@ body {
   font-size: 45px;
   color: #62585f;
   text-shadow: 0 2px 2px #fff;
+  margin-top: 24px;
   margin-bottom: 24px;
 }
 
@@ -639,6 +863,22 @@ body {
   text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+  .dsignfly-blog {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .dsignfly-blog main {
+    width: 100%;
+    padding-right: 0;
+  }
+  .dsignfly-blog aside {
+    display: none;
+  }
+}
 .dsignfly-post-container {
   display: flex;
   flex-flow: row wrap;
@@ -664,6 +904,7 @@ body {
   font-size: 35px;
   color: #62585f;
   text-shadow: 0 2px 2px #fff;
+  margin-top: 24px;
 }
 
 .post-info {
@@ -700,6 +941,25 @@ body {
   border-radius: 3px;
 }
 
+@media (max-width: 1024px) {
+  .dsignfly-post-container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 425px) {
+  .dsignfly-post-container {
+    margin-top: 30px;
+  }
+  .dsignfly-post-container main {
+    width: 100%;
+    padding-right: 0;
+  }
+  .dsignfly-post-container aside {
+    display: none;
+  }
+}
 .dsignfly-post-container .comments-wrapper {
   margin-top: 50px;
 }
@@ -828,15 +1088,36 @@ body {
   width: 100%;
   grid-template-columns: repeat(4, 1fr);
   justify-content: space-around;
-  grid-gap: 10px;
 }
 .dsignfly-portfolio-widget-gallery a {
   display: block;
   width: 80px;
   height: 80px;
+  margin-bottom: 10px;
 }
 .dsignfly-portfolio-widget-gallery img {
   display: block;
   max-width: 100%;
   border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+  .dsignfly-portfolio-widget-gallery a {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .dsignfly-portfolio-widget-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .dsignfly-portfolio-widget-gallery a {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+  .dsignfly-portfolio-widget-gallery a:nth-child(7), .dsignfly-portfolio-widget-gallery a:nth-child(8) {
+    display: none;
+  }
 }
