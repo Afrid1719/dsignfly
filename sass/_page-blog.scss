@@ -28,7 +28,11 @@
         }
 
         color: #62585f;
-        text-shadow: 0 2px 2px #fff;
+
+        text: {
+            shadow: 0 2px 2px #fff;
+            transform: capitalize;
+        }
 
         margin : {
             top: 24px;
@@ -169,11 +173,12 @@
 
 @include media($sm-breakpoint) {
     .dsignfly-blog {
-        main{
+        main {
             width: 100%;
             padding-right: 0;
         }
-        aside{
+
+        aside {
             display: none;
         }
     }

@@ -770,6 +770,7 @@ body {
   font-size: 45px;
   color: #62585f;
   text-shadow: 0 2px 2px #fff;
+  text-transform: capitalize;
   margin-top: 24px;
   margin-bottom: 24px;
 }

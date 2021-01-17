@@ -1,23 +1,25 @@
 <?php
 /**
- * Template Name: Blog Page
+ * Template Name: Author Archives
  */
 
  get_header();
 
  $paged = ( get_query_var( 'paged' ) == 0 ) ? 1 : get_query_var( 'paged' );
-$args   = array(
-	'post_type'      => 'dsignfly_cpt',
-	'posts_per_page' => '5',
-	'paged'          => $paged,
+ $args  = array(
+	 'post_type'      => 'dsignfly_cpt',
+	 'posts_per_page' => '5',
+	 'paged'          => $paged,
 );
- $loop  = new WP_Query( $args );
 
-?>
+ $args['author'] = $_GET['author'];
+ $loop           = new WP_Query( $args );
+
+	?>
 <div class="dsignfly-blog">
 	<main class="dsignfly-blog__main">
 		<header class="dsignfly-blog__main-header">
-			<h2><?php esc_html_e( 'Let\'s Blog', 'dsignfly' ); ?></h2>
+			<h2><?php esc_html_e( get_the_author_meta( 'user_nicename', $_GET['author'] ) . '\'s Archives' ); ?></h2>
 		</header>
 
 		<?php

@@ -234,9 +234,9 @@ function dsignfly_flush_rewrite_rules() {
 /**
  * Register Portfolio Widget
  */
-add_action('widgets_init', 'dsignfly_register_portfolio_widget');
+add_action( 'widgets_init', 'dsignfly_register_portfolio_widget' );
 function dsignfly_register_portfolio_widget() {
-	require_once get_theme_file_path('inc/widgets.php');
-	
-	register_widget('Dsignfly_Portfolio_Widget');
+	require_once get_theme_file_path( 'inc/widgets.php' );
+
+	register_widget( 'Dsignfly_Portfolio_Widget' );
 }
