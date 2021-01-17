@@ -9,17 +9,25 @@
 	<main class="dsignfly-main">
 		<header class="dsignfly-gallery-header" id="portfolio-gallery-header">
 			<h2><?php esc_html_e( 'DESIGN THE SOUL' ); ?></h2>
-			<?php $features = array( 'Advertising', 'Multimedia', 'Photography' ); ?>
+			<?php
+			$terms = get_terms(
+				array(
+					'taxonomy'   => 'post_tag',
+					'hide_empty' => true,
+				)
+			);
+			?>
 			<div class="dsignfly-tags">
 			<?php
-			foreach ( $features as $feature ) {
+			foreach ( $terms as $term ) {
 				?>
-				<button 
-					type="button" 
+				<a
+					href="<?php echo esc_url( get_term_link( $term ) ); ?>" 
+					role="button" 
 					class="dsignfly-tag-btn"
 				>
-					<?php esc_html_e( $feature ); ?>
-				</button>
+					<?php esc_html_e( $term->name ); ?>
+				</a>
 				<?php
 			}
 			?>

@@ -28,7 +28,7 @@
 			<div class="post-details">
 				<div class="post-info">
 					<span class="post-meta">
-				<?php dsignfly_posted_by(); ?>
+						<?php dsignfly_posted_by(); ?>
 						on <?php echo $post_full_date; ?>
 					</span>
 					<span class="post-comments">

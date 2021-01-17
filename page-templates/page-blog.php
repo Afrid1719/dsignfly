@@ -6,14 +6,16 @@
  get_header();
 
  $paged = ( get_query_var( 'paged' ) == 0 ) ? 1 : get_query_var( 'paged' );
-$args   = array(
-	'post_type'      => 'dsignfly_cpt',
-	'posts_per_page' => '5',
-	'paged'          => $paged,
-);
- $loop  = new WP_Query( $args );
+ $args  = array(
+	 'post_type'      => array( 'post', 'dsignfly_cpt' ),
+	 'posts_per_page' => '5',
+	 'paged'          => $paged,
+	 'post_status'    => 'publish',
+ );
 
-?>
+ $loop = new WP_Query( $args );
+
+	?>
 <div class="dsignfly-blog">
 	<main class="dsignfly-blog__main">
 		<header class="dsignfly-blog__main-header">

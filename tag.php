@@ -12,14 +12,14 @@
 	 'paged'          => $paged,
 );
 
- $args['author'] = get_query_var('author');
- $loop           = new WP_Query( $args );
-
+ $args['tag'] = get_query_var('tag');
+ $loop        = new WP_Query( $args );
+ 
 	?>
 <div class="dsignfly-blog">
 	<main class="dsignfly-blog__main">
 		<header class="dsignfly-blog__main-header">
-			<h2><?php esc_html_e( ucwords(get_the_author_meta( 'user_nicename', get_query_var('author') )) . '\'s Archives' ); ?></h2>
+			<h2><?php esc_html_e( ucwords(get_query_var('tag')) . '\'s Archives' ); ?></h2>
 		</header>
 
 		<?php

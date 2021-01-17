@@ -33,6 +33,7 @@
             background: transparent;
             color: #fff;
             font-weight: $dsignfly-font-weight-semi-bold;
+            cursor: pointer;
         }
 
         &:hover img:not([tabIndex="-1"]) {
@@ -46,6 +47,11 @@
 }
 
 .dsignfly-tag-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    background-color: #222;
+    color: #fff;
     border-radius: 5px !important;
 
     &:hover {

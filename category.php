@@ -12,14 +12,14 @@
 	 'paged'          => $paged,
 );
 
- $args['cat'] = $_GET['cat'];
+ $args['cat'] = get_query_var('cat');
  $loop        = new WP_Query( $args );
 
 	?>
 <div class="dsignfly-blog">
 	<main class="dsignfly-blog__main">
 		<header class="dsignfly-blog__main-header">
-			<h2><?php esc_html_e( get_cat_name( $_GET['cat'] ) . '\'s Archives' ); ?></h2>
+			<h2><?php esc_html_e( ucwords(get_cat_name( get_query_var('cat') )) . '\'s Archives' ); ?></h2>
 		</header>
 
 		<?php

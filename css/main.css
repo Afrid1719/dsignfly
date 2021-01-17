@@ -674,6 +674,7 @@ body {
   background: transparent;
   color: #fff;
   font-weight: 500;
+  cursor: pointer;
 }
 .dsignfly-portfolio-gallery a:hover img:not([tabIndex="-1"]) {
   transform: unset;
@@ -683,6 +684,11 @@ body {
 }
 
 .dsignfly-tag-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 16px;
+  background-color: #222;
+  color: #fff;
   border-radius: 5px !important;
 }
 .dsignfly-tag-btn:hover {
@@ -770,7 +776,6 @@ body {
   font-size: 45px;
   color: #62585f;
   text-shadow: 0 2px 2px #fff;
-  text-transform: capitalize;
   margin-top: 24px;
   margin-bottom: 24px;
 }
