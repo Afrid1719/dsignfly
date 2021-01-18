@@ -19,7 +19,7 @@
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-around;
 
-    a{
+    a {
         display: block;
         width: 80px;
         height: 80px;
@@ -28,7 +28,7 @@
 
     img {
         display: block;
-        max-width: 100%;    
+        max-width: 100%;
         border-radius: 5px;
     }
 }
@@ -46,13 +46,14 @@
 @include media($md-breakpoint) {
     .dsignfly-portfolio-widget-gallery {
         grid-template-columns: repeat(3, 1fr);
-        
+
         a {
             width: 70px;
             height: 70px;
             margin-bottom: 20px;
 
-            &:nth-child(7), &:nth-child(8)  {
+            &:nth-child(7),
+            &:nth-child(8) {
                 display: none;
             }
         }

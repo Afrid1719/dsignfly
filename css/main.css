@@ -905,7 +905,8 @@ body {
     padding-right: 0;
   }
   .dsignfly-blog aside {
-    display: none;
+    width: 100%;
+    padding-left: 0;
   }
 }
 .dsignfly-post-container {
