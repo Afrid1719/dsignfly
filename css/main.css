@@ -102,6 +102,10 @@ body {
 .dsignfly-menu__list > .menu-item {
   display: inline-block;
 }
+.dsignfly-menu__list > .menu-item.current-menu-item a {
+  background-color: #ef4634;
+  color: #fff;
+}
 .dsignfly-menu__list > .menu-item a {
   padding: 6px 10px;
   border-radius: 3px;
@@ -727,6 +731,10 @@ body {
   display: inline-block;
   font-weight: 500;
   font-size: 16px;
+}
+.dsignfly-pagination li span.current {
+  background-color: #ef4634;
+  color: #fff;
 }
 .dsignfly-pagination li a, .dsignfly-pagination li span {
   display: inline-block;
