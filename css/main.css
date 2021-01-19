@@ -1189,6 +1189,7 @@ body {
   border-bottom: 1px solid #62585f;
 }
 
+/* ----- Portfolio Widget -------*/
 .dsignfly-portfolio-widget-gallery {
   display: grid;
   width: 100%;
@@ -1226,4 +1227,67 @@ body {
   .dsignfly-portfolio-widget-gallery a:nth-child(7), .dsignfly-portfolio-widget-gallery a:nth-child(8) {
     display: none;
   }
+}
+/* ------- Popular Posts Widget ---------- */
+.dsignfly-popular-post {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.dsignfly-popular-post__img-container {
+  width: 15%;
+}
+
+.dsignfly-popular-post__img {
+  border-radius: 3px;
+}
+
+.dsignfly-popular-post__data {
+  width: 85%;
+}
+.dsignfly-popular-post__data .post-title {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #62585f;
+  margin-bottom: 6px;
+}
+.dsignfly-popular-post__data .post-title:hover {
+  color: #ef4634;
+}
+.dsignfly-popular-post__data .post-info {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+}
+.dsignfly-popular-post__data .post-info .vcard a {
+  text-decoration: none;
+  color: #ef4634;
+}
+.dsignfly-popular-post__data .post-info .vcard a:hover {
+  text-decoration: underline;
+}
+
+/* ------- Archive Widget --------- */
+.widget.widget_archive ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.widget.widget_archive ul li {
+  font-size: 13px;
+  font-weight: 500;
+}
+.widget.widget_archive ul li a {
+  text-decoration: none;
+  color: #62585f;
+}
+.widget.widget_archive ul li a:hover {
+  color: #ef4634;
+}
+.widget.widget_archive ul li::before {
+  font-family: "dashicons";
+  font-size: 12px;
+  font-font-weight: 700;
+  content: "";
 }

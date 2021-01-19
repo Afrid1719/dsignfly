@@ -13,6 +13,7 @@
     border-bottom: 1px solid #62585f;
 }
 
+/* ----- Portfolio Widget -------*/
 .dsignfly-portfolio-widget-gallery {
     display: grid;
     width: 100%;
@@ -57,5 +58,90 @@
                 display: none;
             }
         }
+    }
+}
+
+/* ------- Popular Posts Widget ---------- */
+
+.dsignfly-popular-post {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.dsignfly-popular-post__img-container {
+    width: 15%;
+}
+
+.dsignfly-popular-post__img {
+    border-radius: 3px;
+}
+
+.dsignfly-popular-post__data {
+    width: 85%;
+
+    .post-title {
+        display: block;
+        text-decoration: none;
+        font: {
+            size: 14px;
+            weight: $dsignfly-font-weight-regular; 
+        } 
+        color: #62585f;
+        margin-bottom: 6px;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
+
+    .post-info {
+        display: block;
+        font: {
+            size: 12px;
+            weight: $dsignfly-font-weight-regular;
+        }
+
+        .vcard a {
+            text-decoration: none;
+            color: $primary-color;
+
+            &:hover {
+                text-decoration: underline; 
+            }
+        }
+    }
+
+}
+
+/* ------- Archive Widget --------- */
+.widget.widget_archive {
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    ul li{
+        font: {
+            size: 13px;
+            weight: $dsignfly-font-weight-semi-bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #62585f;
+
+            &:hover{
+                color: $primary-color;
+            }
+        }
+    }
+
+    ul li::before {
+        font: {
+            family: "dashicons";
+            size: 12px;
+            font-weight: $dsignfly-font-weight-bold; 
+        }
+        content: "\f345";
     }
 }

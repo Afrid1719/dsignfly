@@ -237,7 +237,17 @@ function dsignfly_flush_rewrite_rules() {
  */
 add_action( 'widgets_init', 'dsignfly_register_portfolio_widget' );
 function dsignfly_register_portfolio_widget() {
-	require_once get_theme_file_path( 'inc/widgets.php' );
+	require_once get_theme_file_path( 'inc/widgets/portfolio-widget.php' );
 
 	register_widget( 'Dsignfly_Portfolio_Widget' );
+}
+
+/**
+ * Register Popular Posts Widget
+ */
+add_action('widgets_init', 'dsignfly_register_popular_posts_widget');
+function dsignfly_register_popular_posts_widget() {
+	require_once get_theme_file_path('inc/widgets/popular-posts-widget.php');
+
+	register_widget('Dsignfly_Popular_Posts_Widget');
 }
