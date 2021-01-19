@@ -2,7 +2,7 @@
 
 .dsignfly-post-container {
     .comments-wrapper {
-        margin-top: 50px;
+        margin-top: 32px;
 
         .bars {
             font-size: 18px;
@@ -38,9 +38,23 @@
 
         a{
             text-decoration: none;
+            font-style: normal;
 
             &:hover{
                 text-decoration: underline;
+            }
+        }
+    }
+
+    .vcard {
+        &::before {
+            display: inline;
+            content: "\f101";
+            color: #62585f;
+            font: {
+                family: "dashicons";
+                weight: 700;
+                size: 18px;
             }
         }
     }
@@ -76,7 +90,7 @@
             float: right;
 
             a {
-                color: $primary-color;
+                color: #62585f;
                 font-size: 1rem;
                 text-transform: lowercase;
                 text-decoration: none;
@@ -84,7 +98,7 @@
                 &::before {
                     font-family: 'dashicons';
                     content: "\f344";
-                    color: $primary-color;
+                    color: #62585f;
                     font-size: 1rem;
                     vertical-align: middle;
                 }

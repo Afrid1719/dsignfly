@@ -41,7 +41,7 @@
 }
 
 .dsignfly-blog__post {
-    margin: 24px auto;
+    margin: 24px auto 60px;
 }
 
 .dsignfly-blog__post-header {
@@ -180,6 +180,16 @@
         aside {
             width: 100%;
             padding-left: 0;
+        }
+    }
+
+    .dsignfly-blog__post-content {
+        img {
+            width: 40%;
+        }
+
+        .post-details{
+            width: 54%;
         }
     }
 }

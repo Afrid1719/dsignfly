@@ -52,6 +52,19 @@
     }
 }
 
+.associated-tags {
+    margin-top: 32px;
+
+    a {
+        text-decoration: none;
+        color: $primary-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
 .comments-number {
     font-size: 14px;
     color: $primary-color;
@@ -67,7 +80,6 @@
 
     img {
         display: block;
-        // width: 620px;
         width: 100%;
         height: auto;
         border-radius: 3px;
@@ -95,6 +107,14 @@
 
         aside {
             display: none;
+        }
+    }
+
+    .post-info {
+        flex-direction: column;
+
+        span:first-child {
+            margin-bottom: 4px;
         }
     }
 }
