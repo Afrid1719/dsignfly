@@ -846,7 +846,7 @@ body {
 }
 
 .dsignfly-blog__post {
-  margin: 24px auto;
+  margin: 24px auto 60px;
 }
 
 .dsignfly-blog__post-header {
@@ -950,6 +950,13 @@ body {
     width: 100%;
     padding-left: 0;
   }
+
+  .dsignfly-blog__post-content img {
+    width: 40%;
+  }
+  .dsignfly-blog__post-content .post-details {
+    width: 54%;
+  }
 }
 .dsignfly-post-container {
   display: flex;
@@ -995,6 +1002,17 @@ body {
   text-decoration: underline;
 }
 
+.associated-tags {
+  margin-top: 32px;
+}
+.associated-tags a {
+  text-decoration: none;
+  color: #ef4634;
+}
+.associated-tags a:hover {
+  text-decoration: underline;
+}
+
 .comments-number {
   font-size: 14px;
   color: #ef4634;
@@ -1031,9 +1049,16 @@ body {
   .dsignfly-post-container aside {
     display: none;
   }
+
+  .post-info {
+    flex-direction: column;
+  }
+  .post-info span:first-child {
+    margin-bottom: 4px;
+  }
 }
 .dsignfly-post-container .comments-wrapper {
-  margin-top: 50px;
+  margin-top: 32px;
 }
 .dsignfly-post-container .comments-wrapper .bars {
   font-size: 18px;
@@ -1061,9 +1086,18 @@ body {
 }
 #comments .vcard .fn a {
   text-decoration: none;
+  font-style: normal;
 }
 #comments .vcard .fn a:hover {
   text-decoration: underline;
+}
+#comments .vcard::before {
+  display: inline;
+  content: "";
+  color: #62585f;
+  font-family: "dashicons";
+  font-weight: 700;
+  font-size: 18px;
 }
 #comments .vcard,
 #comments .commentmetadata {
@@ -1089,7 +1123,7 @@ body {
   float: right;
 }
 #comments .comment-body .reply a {
-  color: #ef4634;
+  color: #62585f;
   font-size: 1rem;
   text-transform: lowercase;
   text-decoration: none;
@@ -1097,7 +1131,7 @@ body {
 #comments .comment-body .reply a::before {
   font-family: "dashicons";
   content: "";
-  color: #ef4634;
+  color: #62585f;
   font-size: 1rem;
   vertical-align: middle;
 }
