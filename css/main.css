@@ -57,19 +57,26 @@ body {
 }
 
 .site-header {
-  position: relative;
-  display: flex;
-  flex-flow: row wrap;
+  display: block;
   width: 100%;
   height: 105px;
-  padding: 1rem 0;
   box-shadow: 0 5px 5px #80150a;
   z-index: 1000;
 }
 
+#header-container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
 .site-branding {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 40%;
   height: 100%;
@@ -82,6 +89,7 @@ body {
 
 .main-navigation {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   width: 60%;
   vertical-align: middle;
@@ -121,8 +129,7 @@ body {
 }
 
 .dsignfly-search {
-  padding: 0 20px;
-  margin-top: -5px;
+  padding: 15px 0 20px 15px;
 }
 .dsignfly-search .search-input {
   width: 150px;
@@ -130,46 +137,55 @@ body {
   background-color: #fff;
   border-radius: 3px;
   border: 1px solid #62585f;
+  vertical-align: middle;
 }
 
 .search-submit-btn {
-  padding-top: 4px;
   border: none;
   cursor: pointer;
+  vertical-align: middle;
+  padding-left: 0;
+  padding-right: 0;
   width: 20px;
-  height: 25px;
+  height: 20px;
+  margin-top: -4px;
+}
+.search-submit-btn img {
+  width: 20px;
+  height: 22px;
   object-fit: cover;
-  object-position: 0 2px;
-  vertical-align: baseline;
+  object-position: 0px -30px;
+}
+
+.dsignfly-banner-container {
+  width: 100%;
+  height: 540px;
+  z-index: 999;
+  background-image: url("../assets/images/home/slider-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .dsignfly-banner {
   display: flex;
   flex-flow: row nowrap;
-  width: 100%;
-  height: 544px;
-  padding: 40px 24px;
-  margin-bottom: 3px;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-origin: padding-box;
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto 3px;
 }
 
 .dsignfly-banner__left-arrow {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   width: 20%;
 }
 
 .dsignfly-banner__left-arrow-img {
-  width: 150px;
-  height: 70px;
-  object-fit: cover;
-  object-position: 70px 20px;
+  width: 50px;
+  height: 50px;
 }
 
 .dsignfly-banner__text {
@@ -197,21 +213,20 @@ body {
   text-align: center;
   margin-top: 8px;
   margin-bottom: 8px;
+  padding-bottom: 52px;
 }
 
 .dsignfly-banner__right-arrow {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
   width: 20%;
 }
 
 .dsignfly-banner__right-arrow-img {
-  width: 150px;
-  height: 70px;
-  object-fit: cover;
-  object-position: -70px 20px;
+  width: 50px;
+  height: 50px;
 }
 
 .dsignfly-features {
@@ -229,22 +244,22 @@ body {
 .dsignfly-features__container > div {
   width: 33.333%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   grid-template-rows: auto;
 }
 .dsignfly-features__container .advertising img,
 .dsignfly-features__container .multimedia img,
 .dsignfly-features__container .photography img {
   grid-area: 1/1/3/2;
-  justify-self: center;
+  justify-self: start;
   align-self: center;
 }
 .dsignfly-features__container .advertising a,
 .dsignfly-features__container .multimedia a,
 .dsignfly-features__container .photography a {
   display: block;
-  grid-area: 1/2/2/4;
-  margin-top: 10px;
+  grid-area: 1/2/2/span 4;
+  margin-top: 16px;
   margin-bottom: 4px;
   font-size: 20px;
   font-weight: 700;
@@ -267,9 +282,9 @@ body {
 .dsignfly-features__container .advertising p,
 .dsignfly-features__container .multimedia p,
 .dsignfly-features__container .photography p {
-  grid-area: 2/2/3/4;
+  grid-area: 2/2/3/span 4;
   margin-top: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   font-size: 13px;
   font-weight: 400;
   color: #333;
@@ -284,18 +299,16 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .site-branding {
-    width: 28%;
-  }
-
-  .main-navigation {
-    width: 72%;
+  #header-container, .dsignfly-banner {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .dsignfly-features__container {
     width: 100%;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 }
 @media (max-width: 768px) {
@@ -303,8 +316,27 @@ body {
     height: 85px;
   }
 
-  .dsignfly-banner {
+  .site-branding {
+    width: 30%;
+  }
+  .site-branding img {
+    width: 45%;
+  }
+
+  .main-navigation {
+    width: 70%;
+  }
+
+  .dsignfly-menu__list > .menu-item a {
+    padding: 6px 8px;
+  }
+
+  .dsignfly-banner-container {
     height: 500px;
+  }
+
+  .dsignfly-banner__body-text {
+    padding-bottom: 20px;
   }
 }
 @media (max-width: 425px) {
@@ -350,8 +382,8 @@ body {
     display: block;
   }
 
-  .dsignfly-banner {
-    height: 400px;
+  .dsignfly-banner-container {
+    height: 450px;
     padding: 24px 14px;
   }
 
@@ -361,14 +393,16 @@ body {
 
   .dsignfly-banner__body-text {
     font-size: 14px;
+    padding-bottom: 12px;
   }
 
-  .dsignfly-banner__left-arrow-img {
-    object-position: 70px 30px;
+  .dsignfly-banner__text {
+    width: 70%;
+    justify-content: center;
   }
 
-  .dsignfly-banner__right-arrow-img {
-    object-position: -70px 30px;
+  .dsignfly-banner__left-arrow, .dsignfly-banner__right-arrow {
+    width: 15%;
   }
 
   .dsignfly-features__container {
