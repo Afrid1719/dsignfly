@@ -1,0 +1,445 @@
+@import "variables";
+@import "mixin";
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+
+  &:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+  }
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+.site-header {
+  display: block;
+  width: 100%;
+  height: 105px;
+  box-shadow: 0 5px 5px darken($primary-color, 30%);
+  z-index: 1000;
+}
+
+#header-container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.site-branding {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40%;
+  height: 100%;
+
+  img {
+    display: block;
+    width: 30%;
+    height: auto;
+  }
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 60%;
+  vertical-align: middle;
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.dsignfly-menu,
+.dsignfly-search {
+  display: inline-block;
+}
+
+.dsignfly-menu__list {
+  list-style-type: none;
+  padding-left: 0;
+
+  > .menu-item {
+    display: inline-block;
+
+    &.current-menu-item a{
+      background-color: $primary-color;
+      color: #fff;
+    }
+
+    a {
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-weight: $dsignfly-font-weight-bold;
+      font-size: 14px;
+      color: #222;
+      transition: 500ms ease-in-out;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $primary-color;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.dsignfly-search {
+  padding: 15px 0 20px 15px;
+
+  .search-input {
+    width: 150px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #62585f;
+    vertical-align: middle;
+  }
+}
+
+.search-submit-btn {
+  border: none;
+  cursor: pointer;
+  vertical-align: middle;
+  padding: {
+    left: 0;
+    right: 0;
+  }
+  width: 20px;
+  height: 20px;
+  margin-top: -4px;
+
+  img {
+    width: 20px;
+  height: 22px;
+  object-fit: cover;
+  object-position: 0px -30px;
+  }
+}
+
+.dsignfly-banner-container {
+  width: 100%;
+  height: 540px;
+  z-index: 999;
+
+  background: {
+    image: url('../assets/images/home/slider-image.png');
+    repeat: no-repeat;
+    size: cover;
+    position: center;
+  }
+}
+
+.dsignfly-banner {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto 3px;
+}
+
+.dsignfly-banner__left-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20%;
+}
+
+.dsignfly-banner__left-arrow-img {
+  width: 50px;
+  height: 50px;
+}
+
+.dsignfly-banner__text {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: flex-end;
+}
+
+.dsignfly-banner__header-text {
+  font-weight: $dsignfly-font-weight-bold;
+  font-size: 70px;
+  color: #fff;
+  text-shadow: 0px 2px 2px #950904;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.dsignfly-banner__body-text {
+  font-weight: $dsignfly-font-weight-semi-bold;
+  font-size: 16px;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  padding-bottom: 52px;
+}
+
+.dsignfly-banner__right-arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 20%;
+}
+
+.dsignfly-banner__right-arrow-img {
+  width: 50px;
+  height: 50px;
+}
+
+.dsignfly-features {
+  width: 100%;
+
+  background: {
+    image: url("../assets/images/home/features-repeatable-bg.png");
+    repeat: repeat;
+  }
+}
+
+.dsignfly-features__container {
+  width: 1170px;
+  margin: 0 auto 24px;
+  display: flex;
+  flex-flow: row wrap;
+
+  > div {
+    width: 33.333%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .advertising,
+  .multimedia,
+  .photography {
+    img {
+      grid-area: 1/1/3/2;
+      justify-self: start;
+      align-self: center;
+    }
+
+    a {
+      display: block;
+      grid-area: 1/2/2/span 4;
+
+      margin: {
+        top: 16px;
+        bottom: 4px;
+      }
+
+      font: {
+        size: 20px;
+        weight: $dsignfly-font-weight-bold;
+      }
+
+      text-decoration: none;
+      color: $primary-color;
+      text-shadow: 0 2px 2px #fff;
+
+      &:hover {
+        color: #222;
+      }
+
+      @include media($md-breakpoint) {
+        & {
+          margin-top: 6px;
+        }
+      }
+    }
+
+    p {
+      grid-area: 2/2/3/span 4;
+
+      margin: {
+        top: 4px;
+        bottom: 16px;
+      }
+
+      font: {
+        size: 13px;
+        weight: $dsignfly-font-weight-regular;
+      }
+
+      color: #333;
+      line-height: 19.5px;
+      @include media($md-breakpoint) {
+        & {
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+}
+
+@include media($lg-breakpoint) {
+    #header-container, .dsignfly-banner {
+      width: 100%;
+      padding: {
+        left: 15px;
+        right: 15px;
+      }
+    }
+
+  .dsignfly-features__container {
+    width: 100%;
+    padding: {
+      left: 6px;
+      right: 6px;
+    }
+  }
+}
+
+@include media($md-breakpoint) {
+  .site-header {
+    height: 85px;
+  }
+
+  .site-branding {
+    width: 30%;
+
+    img {
+      width: 45%;
+    }
+  }
+
+  .main-navigation {
+    width: 70%;
+  }
+
+  .dsignfly-menu__list {
+    >.menu-item a {
+      padding: 6px 8px;
+    }
+  }
+
+  .dsignfly-banner-container {
+    height: 500px;
+  }
+
+  .dsignfly-banner__body-text {
+    padding-bottom: 20px;
+  }
+}
+
+@include media($sm-breakpoint) {
+  .site-branding {
+    width: 75%;
+  }
+  .main-navigation {
+    width: 25%;
+
+    .menu-toggle {
+      display: block;
+      transform: scale(0.75);
+    }
+  }
+
+  .dsignfly-search {
+    display: none;
+  }
+
+  .dsignfly-menu__list {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+    background-image: url("../assets/images/repeatable-bg.png");
+    z-index: 1001;
+
+    .menu-item {
+      display: block;
+      width: 100%;
+
+      a {
+        display: block;
+        width: 100%;
+        padding: {
+          left: 10px;
+          top: 6px;
+          bottom: 6px;
+        }
+      }
+    }
+  }
+
+  .main-navigation.toggled ul {
+    display: block;
+  }
+
+  .dsignfly-banner-container{
+    height: 450px;
+    padding: 24px 14px;
+  }
+
+  .dsignfly-banner__header-text{
+    font-size: 44px;
+  }
+
+  .dsignfly-banner__body-text{
+    font-size: 14px;
+    padding-bottom: 12px;
+  }
+  
+  .dsignfly-banner__text {
+    width: 70%;
+    justify-content: center;
+  }
+
+  .dsignfly-banner__left-arrow,.dsignfly-banner__right-arrow {
+    width: 15%;
+  }
+
+  .dsignfly-features__container{
+      width: 100%;
+      flex-direction: column;
+      padding: {
+          top: 15px;
+          bottom: 15px;
+      } 
+
+      >div {
+        width: 100%;
+      }
+  }
+}

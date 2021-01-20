@@ -1,0 +1,12 @@
+@mixin media($breakpoint) {
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin position-item($x, $y) {
+    position: absolute;
+    left: $x;
+    top: $y;
+    transform: translate(-$x, -$y);
+}

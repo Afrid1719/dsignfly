@@ -1,0 +1,120 @@
+@import 'variables';
+@import 'mixin';
+
+.dsignfly-post-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 1170px;
+    margin: 50px auto 0;
+
+    main{
+        width: 65%;
+        padding-right: 15px;
+    }
+
+    aside{
+        width: 35%;
+        padding-left: 15px;
+    }
+}
+
+.dsignfly-single-post-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #62585f;
+}
+
+.dsignfly-single-post-title {
+    font: {
+        weight: $dsignfly-font-weight-regular;
+        size: 35px;
+    }
+    color: #62585f;
+    text-shadow: 0 2px 2px #fff;
+    margin-top: 24px;
+}
+
+.post-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-meta a {
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $primary-color;
+    font: {
+        font-weight: $dsignfly-font-weight-regular;
+        size: 14px;
+    } 
+
+    &:hover{ 
+        text-decoration: underline;
+    }
+}
+
+.associated-tags {
+    margin-top: 32px;
+
+    a {
+        text-decoration: none;
+        color: $primary-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.comments-number {
+    font-size: 14px;
+    color: $primary-color;
+}
+
+.dsignfly-single-post-content{
+    font: {
+        weight: $dsignfly-font-weight-regular;
+        size: 14px;
+    }
+    color: #62585f;
+    line-height: 21px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 3px;
+    }
+}
+
+@include media($lg-breakpoint) {
+    .dsignfly-post-container {
+        width: 100%;
+        padding: {
+            left: 15px;
+            right: 15px;
+        }
+    }
+}
+
+@include media($sm-breakpoint) {
+    .dsignfly-post-container{
+        margin-top: 30px;
+        
+        main{
+            width: 100%;
+            padding-right: 0;
+        }
+
+        aside {
+            display: none;
+        }
+    }
+
+    .post-info {
+        flex-direction: column;
+
+        span:first-child {
+            margin-bottom: 4px;
+        }
+    }
+}

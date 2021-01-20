@@ -1,0 +1,165 @@
+@import 'variables';
+
+.dsignfly-post-container {
+    .comments-wrapper {
+        margin-top: 32px;
+
+        .bars {
+            font-size: 18px;
+            color: #62585f;
+            width: 100%;
+            padding: 8px 0;
+            border: {
+                top: 1px solid #62585f;
+                bottom: 1px solid #62585f;
+            }
+        }
+    }
+}
+
+#comments {
+    a {
+        color: $primary-color;
+    }
+
+    .comment-list {
+        padding: 0;
+        margin: 0;
+
+        .comment,
+        .comment-body {
+            overflow: auto;
+        }
+    }
+
+    .vcard .fn{
+        text-transform: capitalize;
+        color: $primary-color;
+
+        a{
+            text-decoration: none;
+            font-style: normal;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .vcard {
+        &::before {
+            display: inline;
+            content: "\f101";
+            color: #62585f;
+            font: {
+                family: "dashicons";
+                weight: 700;
+                size: 18px;
+            }
+        }
+    }
+
+    .vcard,
+    .commentmetadata {
+        display: inline-block;
+        color: #62585f;
+        font-size: 0.9rem;
+    }
+
+    .commentmetadata {
+        a {
+            font-size: 0.9rem;
+            color: #62585f;
+        }
+
+        .comment-edit-link {
+            color: $primary-color;
+        }
+    }
+
+    .comment-body {
+        p {
+            line-height: 1.5rem;
+            font-size: 1rem;
+            color: #62585f;
+            margin-top: 10px;
+        }
+
+        .reply {
+            display: inline-block;
+            float: right;
+
+            a {
+                color: #62585f;
+                font-size: 1rem;
+                text-transform: lowercase;
+                text-decoration: none;
+
+                &::before {
+                    font-family: 'dashicons';
+                    content: "\f344";
+                    color: #62585f;
+                    font-size: 1rem;
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+}
+
+
+#comments {
+
+    #reply-title,
+    .comment-notes,
+    .comment-form-comment>label:first-child,
+    .comment-form-cookies-consent {
+        display: none;
+    }
+
+    .comment-form-comment {
+        margin-bottom: 5px;
+
+        textarea {
+            width: 100%;
+        }
+    }
+
+    .comment-form .logged-in-as a {
+        color: $primary-color;
+    }
+
+    .post-comment {
+        font-size: 1.4rem;
+        color: #62585f;
+        margin-bottom: 5px;
+    }
+
+    .comment-form-author,
+    .comment-form-email,
+    .comment-form-url {
+        margin: 0;
+        padding: 0;
+        width: 33.33%;
+        float: left;
+    }
+
+    .comment-form-author input,
+    .comment-form-email input,
+    .comment-form-url input {
+        width: 95%;
+    }
+
+    .form-submit #submit {
+        float: right;
+        padding: 10px;
+        color: #FFF;
+        background-color: #222222;
+        border: none;
+        border-radius: 5px;
+        margin: {
+            top: 15px;
+            bottom: 35px;
+        }
+    }
+}

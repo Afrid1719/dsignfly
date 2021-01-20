@@ -1,0 +1,86 @@
+@import 'variables';
+@import 'gallery';
+@import 'mixin';
+
+.dsignfly-main {
+    display: block;
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.dsignfly-gallery-header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #62585f;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        font: {
+            weight: $dsignfly-font-weight-light;
+            size: 45px;
+        }
+
+        color: #62585f;
+        text-shadow: 0 2px 2px #fff;
+
+        margin: {
+            top: 16px;
+            bottom: 16px;
+        }
+    }
+
+    button {
+        display: inline-block;
+        padding: 10px;
+        line-height: 1;
+
+        border: {
+            radius: 3px;
+            style: none;
+        }
+
+        font-size: 16px;
+        background-color: #222;
+        color: #fff;
+        max-height: 36px;
+
+        &:hover {
+            background-color: lighten(#222, 30%);
+            cursor: pointer;
+        }
+    }
+
+    a[role="button"] {
+        @extend button;
+        text-decoration: none;
+    }
+
+}
+
+.dsignfly-gallery {
+    @extend .gallery;
+}
+
+.no-posts-found {
+    font-size: 24px;
+    margin: 16px auto;
+    color: #222222;
+    text-align: center;
+}
+
+@include media($lg-breakpoint) {
+    .dsignfly-main{
+        width: 100%;
+        padding: {
+            left: 15px;
+            right: 15px;
+        }
+    }
+}
+
+@include media($sm-breakpoint) {
+    .dsignfly-gallery-header h2{
+        font-size: 28px;
+    }
+}

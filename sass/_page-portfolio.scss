@@ -1,0 +1,141 @@
+@import 'variables';
+@import 'gallery';
+@import 'mixin';
+
+.dsignfly-portfolio-gallery {
+    @extend .gallery;
+
+    a {
+        position: relative;
+        z-index: 99;
+
+        .img-overlay {
+            display: none;
+            @include position-item(0, 0);
+            width: 380px;
+            height: 210px;
+            z-index: 100;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            transition: 1s ease;
+        }
+
+        img[tabIndex="-1"] {
+            @include position-item(50%, 50%);
+            width: 20px;
+            height: auto;
+        }
+
+        button {
+            @include position-item(50%, 62%);
+            border: none;
+            box-shadow: none;
+            background: transparent;
+            color: #fff;
+            font-weight: $dsignfly-font-weight-semi-bold;
+            cursor: pointer;
+        }
+
+        &:hover img:not([tabIndex="-1"]) {
+            transform: unset;
+        }
+
+        &:hover .img-overlay {
+            display: block;
+        }
+    }
+}
+
+.dsignfly-tag-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 16px;
+    background-color: #222;
+    color: #fff;
+    border-radius: 5px !important;
+
+    &:hover {
+        background-color: $primary-color !important;
+    }
+}
+
+.dsignfly-pagination {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+        font: {
+            weight: $dsignfly-font-weight-semi-bold;
+            size: 16px;
+        }
+
+        & span.current {
+            background-color: $primary-color;
+            color: #fff;
+        }
+
+        a,span {
+            display: inline-block;
+            padding: 7px;
+            text-decoration: none;
+            color: inherit;
+            color: #222;
+            border-radius: 3px;
+        }   
+
+        &:hover a{
+            background-color: $primary-color;
+            color: #fff;
+        }
+    }
+}
+
+.dsignfly-pagination-prev {
+    transform-origin: center;
+    transform: rotate(-180deg);
+}
+
+@include media($lg-breakpoint) {
+    .dsignfly-portfolio-gallery a {
+        .img-overlay {
+            width: 321px;
+        }
+    }
+}
+
+@include media($md-breakpoint) {
+    .dsignfly-portfolio-gallery a {
+        .img-overlay {
+            width: 364px;
+        }
+    }
+}
+
+@include media($sm-breakpoint) {
+    .dsignfly-portfolio-gallery a {
+        .img-overlay {
+            width: 395px;
+        }
+    }
+
+    #portfolio-gallery-header {
+        flex-direction: column;
+
+        .dsignfly-tags {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+@include media(375px) {
+    .dsignfly-portfolio-gallery a {
+        .img-overlay {
+            width: 345  px;
+        }
+    }
+}

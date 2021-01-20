@@ -1,0 +1,18 @@
+@import 'variables';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $dsignfly-font-family;
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url('../assets/images/repeatable-bg.png');
+    background-repeat: repeat;
+}
